@@ -1,0 +1,40 @@
+﻿export const channelConfig = {
+  name: "The Local Guide MS",
+  handle: "@TheLocalGuide-MS",
+  youtubeUrl: "https://www.youtube.com/@TheLocalGuide-MS",
+  subscribeUrl: "https://www.youtube.com/@TheLocalGuide-MS?sub_confirmation=1",
+  googleMapsProfileUrl: "https://www.google.com/maps/contrib/117260776182521505370",
+  googleMapsListUrl: "https://www.google.com/maps/contrib/117260776182521505370/reviews",
+  socials: {
+    instagram: "https://instagram.com/TheLocalGuideMS",
+    tiktok: "https://tiktok.com/@TheLocalGuideMS",
+    facebook: "https://facebook.com/TheLocalGuideMS",
+    googleMaps: "https://www.google.com/maps/contrib/117260776182521505370",
+  },
+  slogan: "Eat Local. Support Local.",
+  tagline: "Restaurant Reviews & Mississippi Food Adventures",
+  subheadline: "Raw, authentic, first-person POV walkthroughs and honest reviews of Mississippi's best diners, secret BBQ pits, coastal seafood shacks, and historic landmarks.",
+  host: {
+    name: "Damein Donald",
+    title: "Mississippi Local Guide & Food Explorer",
+    badgeLevel: "Google Local Guide",
+    contributorId: "117260776182521505370",
+    bio: "Exploring the best flavors and untold stories across the Magnolia State. Captured with first-person Meta smart glasses and 4K gear so you feel like you're sitting at the table.",
+  },
+  stats: {
+    citiesCovered: "28+",
+    spotsReviewed: "65+",
+    localMiles: "3,400+",
+    honestReviews: "100%",
+  },
+  logos: {
+    goldBadge: "/assets/logo_badge_gold.png",
+    minimalBadge: "/assets/logo_badge_minimal.png",
+    greenGrit: "/assets/logo_green_grit.png",
+    classicDiner: "/assets/logo_classic_diner.png",
+    amberNeon: "/assets/logo_amber_neon.png",
+    vintageBlack: "/assets/logo_vintage_black.png",
+    channelBanner: "/assets/channel_banner.png",
+    brandGrid: "/assets/branding_grid.png",
+  }
+};

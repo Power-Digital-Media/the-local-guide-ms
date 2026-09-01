@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { X, Send, MapPin, Sparkles, CheckCircle2, Utensils, MessageSquare } from "lucide-react";
 
 export default function SuggestSpotModal({ isOpen, onClose }) {
@@ -45,7 +45,7 @@ export default function SuggestSpotModal({ isOpen, onClose }) {
               <h3 className="font-heading font-bold text-lg text-white">
                 Suggest a Mississippi Spot
               </h3>
-              <p className="text-xs text-zinc-400">Tell Damein where to review next!</p>
+              <p className="text-xs text-zinc-400">Tell Damein & Mary where to review next!</p>
             </div>
           </div>
 

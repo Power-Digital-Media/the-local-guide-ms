@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { MapPin, Navigation, Star, Award, ShieldCheck, Share2, ExternalLink, Bookmark, CheckCircle, Eye, ThumbsUp, Camera } from "lucide-react";
 import { channelConfig } from "../data/channelConfig";
 
@@ -34,6 +34,14 @@ export default function GoogleMapsHub() {
 
               {/* Local Guide Verified Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                <div className="p-4 rounded-2xl bg-zinc-950/80 border border-blue-500/40 space-y-1">
+                  <div className="flex items-center gap-2 text-blue-400">
+                    <Eye className="w-5 h-5 text-blue-400" />
+                    <span className="font-bold text-sm text-zinc-100">2.2M+ Views</span>
+                  </div>
+                  <p className="text-xs text-zinc-400">Google Maps Photo Views</p>
+                </div>
+
                 <div className="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 space-y-1">
                   <div className="flex items-center gap-2 text-amber-400">
                     <Award className="w-5 h-5 text-amber-400" />
@@ -43,19 +51,11 @@ export default function GoogleMapsHub() {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 space-y-1">
-                  <div className="flex items-center gap-2 text-blue-400">
-                    <Camera className="w-5 h-5 text-blue-400" />
-                    <span className="font-bold text-sm text-zinc-100">Live Photos</span>
-                  </div>
-                  <p className="text-xs text-zinc-400">First-hand food views</p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 space-y-1">
                   <div className="flex items-center gap-2 text-emerald-400">
                     <ShieldCheck className="w-5 h-5 text-emerald-400" />
                     <span className="font-bold text-sm text-zinc-100">100% Honest</span>
                   </div>
-                  <p className="text-xs text-zinc-400">Authentic diner reviews</p>
+                  <p className="text-xs text-zinc-400">Unfiltered Local Opinions</p>
                 </div>
               </div>
 

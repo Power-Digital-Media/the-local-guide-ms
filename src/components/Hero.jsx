@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { MapPin, Compass, Play, Sparkles, Star, CheckCircle, ArrowRight } from "lucide-react";
 import { YouTubeIcon, MetaGlassesIcon } from "./Icons";
 import { channelConfig } from "../data/channelConfig";
@@ -45,7 +45,7 @@ export default function Hero({ onOpenVideoModal }) {
 
             {/* Sub-text */}
             <p className="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Join <span className="text-zinc-200 font-medium">Damein</span> on first-person POV food tours with Meta smart glasses across Mississippi. From secret Delta tamale stands and slow-smoked Jackson BBQ pits to Gulf Coast seafood shacks and small-town diners.
+              Join <span className="text-zinc-200 font-medium">Damein & Mary</span> on first-person POV food tours with Meta smart glasses across Mississippi. From secret Delta tamale stands and slow-smoked Jackson BBQ pits to Gulf Coast seafood shacks and small-town diners.
             </p>
 
             {/* CTA Action Buttons */}
@@ -79,6 +79,12 @@ export default function Hero({ onOpenVideoModal }) {
 
             {/* Quick Feature Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-zinc-850">
+              <div className="p-3 rounded-xl bg-zinc-900/60 border border-blue-500/30 text-center lg:text-left">
+                <div className="text-xl sm:text-2xl font-bold font-heading text-blue-400">
+                  {channelConfig.stats.photoViews}
+                </div>
+                <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-medium">Maps Photo Views</div>
+              </div>
               <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-center lg:text-left">
                 <div className="text-xl sm:text-2xl font-bold font-heading text-amber-400">
                   {channelConfig.stats.spotsReviewed}
@@ -96,12 +102,6 @@ export default function Hero({ onOpenVideoModal }) {
                   {channelConfig.stats.honestReviews}
                 </div>
                 <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-medium">Real Opinions</div>
-              </div>
-              <div className="p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 text-center lg:text-left">
-                <div className="text-xl sm:text-2xl font-bold font-heading text-blue-400">
-                  POV 4K
-                </div>
-                <div className="text-[11px] text-zinc-400 uppercase tracking-wider font-medium">Meta Glasses</div>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Hero({ onOpenVideoModal }) {
                   </div>
                 </div>
                 <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
-                  ACTIVE GUIDE
+                  ACTIVE GUIDES
                 </span>
               </div>
 
@@ -149,10 +149,12 @@ export default function Hero({ onOpenVideoModal }) {
                 <p className="text-xs italic text-zinc-300">
                   "No paid scripts. Just honest reviews, big flavors, and supporting local Mississippi businesses."
                 </p>
-                <div className="mt-3 flex items-center justify-center gap-2 text-xs font-semibold text-amber-400">
-                  <span>Google Maps Level 8 Local Guide</span>
+                <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-amber-400">
+                  <span>Google Maps Local Guide (Damein)</span>
                   <span>•</span>
-                  <span>YouTube Creator</span>
+                  <span>2.2M+ Views</span>
+                  <span>•</span>
+                  <span>Hosted by Damein & Mary</span>
                 </div>
               </div>
             </div>

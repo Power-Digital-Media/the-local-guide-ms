@@ -1,4 +1,4 @@
-﻿export const channelConfig = {
+export const channelConfig = {
   name: "The Local Guide MS",
   handle: "@TheLocalGuide-MS",
   youtubeUrl: "https://www.youtube.com/@TheLocalGuide-MS",
@@ -13,15 +13,21 @@
   },
   slogan: "Eat Local. Support Local.",
   tagline: "Restaurant Reviews & Mississippi Food Adventures",
-  subheadline: "Raw, authentic, first-person POV walkthroughs and honest reviews of Mississippi's best diners, secret BBQ pits, coastal seafood shacks, and historic landmarks.",
-  host: {
+  subheadline: "Raw, authentic, first-person POV walkthroughs and honest reviews of Mississippi's best diners, secret BBQ pits, coastal seafood shacks, and historic landmarks with Damein & Mary.",
+  hosts: {
+    names: "Damein & Mary",
+    title: "Mississippi Food Explorers & Local Creators",
+    bio: "Exploring the best flavors, small-town diners, and untold stories across the Magnolia State. Captured with first-person Meta smart glasses and 4K gear so you feel like you're sitting at the table with us.",
+  },
+  mapsProfile: {
     name: "Damein Donald",
-    title: "Mississippi Local Guide & Food Explorer",
-    badgeLevel: "Google Local Guide",
+    title: "Google Maps Local Guide",
     contributorId: "117260776182521505370",
-    bio: "Exploring the best flavors and untold stories across the Magnolia State. Captured with first-person Meta smart glasses and 4K gear so you feel like you're sitting at the table.",
+    badgeLevel: "Google Local Guide",
   },
   stats: {
+    photoViews: "2.2M+",
+    photoViewsLabel: "Google Maps Views",
     citiesCovered: "28+",
     spotsReviewed: "65+",
     localMiles: "3,400+",

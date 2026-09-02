@@ -1,10 +1,11 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import InteractiveMap from "./components/InteractiveMap";
 import VideoGallery from "./components/VideoGallery";
 import GoogleMapsHub from "./components/GoogleMapsHub";
 import RoadTrips from "./components/RoadTrips";
+import LiveGoogleReviews from "./components/LiveGoogleReviews";
 import AboutHost from "./components/AboutHost";
 import SuggestSpotModal from "./components/SuggestSpotModal";
 import Footer from "./components/Footer";
@@ -51,7 +52,10 @@ export default function App() {
         {/* Google Maps Hub */}
         <GoogleMapsHub />
 
-        {/* About Damein & Filming Philosophy */}
+        {/* Live Real Google Reviews Feed */}
+        <LiveGoogleReviews />
+
+        {/* About Damein & Mary & Filming Philosophy */}
         <AboutHost />
       </main>
 

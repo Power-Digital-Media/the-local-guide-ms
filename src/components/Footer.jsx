@@ -155,10 +155,12 @@ export default function Footer({ onOpenSuggestModal }) {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p className="flex items-center gap-1">
+          <p className="flex flex-wrap items-center gap-1.5">
             <span>© {new Date().getFullYear()} The Local Guide MS. All rights reserved.</span>
             <span>•</span>
             <span className="text-zinc-400">Made with southern pride in Mississippi</span>
+            <span>•</span>
+            <span>Engineered by <a href="https://powerdigitalmedia.org" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Power Digital Media</a></span>
           </p>
 
           <button

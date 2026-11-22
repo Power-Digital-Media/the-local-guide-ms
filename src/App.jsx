@@ -7,15 +7,23 @@ import GoogleMapsHub from "./components/GoogleMapsHub";
 import RoadTrips from "./components/RoadTrips";
 import LiveGoogleReviews from "./components/LiveGoogleReviews";
 import AboutHost from "./components/AboutHost";
+import GuidesShowcaseSection from "./components/GuidesShowcaseSection";
+import SpotReviewPage from "./components/SpotReviewPage";
+import GuideArticlePage from "./components/GuideArticlePage";
 import SuggestSpotSection from "./components/SuggestSpotSection";
 import SuggestSpotModal from "./components/SuggestSpotModal";
 import Footer from "./components/Footer";
+import { locationsData } from "./data/locations";
+import { guidesData } from "./data/guides";
 
 function SubpageHero({ breadcrumb, title, accent, subtitle }) {
   return (
     <section className="pt-28 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-b from-zinc-900/90 via-zinc-950 to-zinc-950 border-b border-zinc-800/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-        <nav aria-label="Breadcrumb" className="text-xs font-semibold uppercase tracking-wider text-zinc-300">
+        <nav
+          aria-label="Breadcrumb"
+          className="text-xs font-semibold uppercase tracking-wider text-zinc-300"
+        >
           <a href="/" className="text-amber-300 hover:underline">
             Home
           </a>{" "}
@@ -42,6 +50,20 @@ export default function App({ routePath }) {
     (typeof window !== "undefined" ? window.location.pathname : "/");
   const cleanPath = rawPath.replace(/\/+$/, "") || "/";
 
+  const reviewSlug = cleanPath.startsWith("/reviews/")
+    ? cleanPath.slice("/reviews/".length)
+    : null;
+  const matchedSpot = reviewSlug
+    ? locationsData.find((l) => l.slug === reviewSlug)
+    : null;
+
+  const guideSlug = cleanPath.startsWith("/guides/")
+    ? cleanPath.slice("/guides/".length)
+    : null;
+  const matchedGuide = guideSlug
+    ? guidesData.find((g) => g.slug === guideSlug)
+    : null;
+
   const handleOpenVideoModal = (video) => {
     setSelectedVideo(video);
   };
@@ -59,7 +81,17 @@ export default function App({ routePath }) {
       <Navbar onOpenSuggestModal={() => setSuggestModalOpen(true)} />
 
       <main id="main-content" className="flex-grow">
-        {cleanPath === "/spots" ? (
+        {matchedSpot ? (
+          <>
+            <SpotReviewPage spot={matchedSpot} />
+            <SuggestSpotSection />
+          </>
+        ) : matchedGuide ? (
+          <>
+            <GuideArticlePage guide={matchedGuide} />
+            <SuggestSpotSection />
+          </>
+        ) : cleanPath === "/spots" ? (
           <>
             <SubpageHero
               breadcrumb="Mississippi Spots Directory"
@@ -71,6 +103,7 @@ export default function App({ routePath }) {
               defaultViewMode="grid"
               onSelectVideo={handleOpenVideoModal}
             />
+            <GuidesShowcaseSection />
             <VideoGallery
               selectedVideo={selectedVideo}
               onOpenVideoModal={handleOpenVideoModal}
@@ -111,6 +144,7 @@ export default function App({ routePath }) {
               onOpenVideoModal={handleOpenVideoModal}
               onCloseVideoModal={handleCloseVideoModal}
             />
+            <GuidesShowcaseSection />
             <RoadTrips />
             <GoogleMapsHub />
             <LiveGoogleReviews />

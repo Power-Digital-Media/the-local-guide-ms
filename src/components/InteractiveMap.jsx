@@ -469,6 +469,15 @@ export default function InteractiveMap({
                   </p>
 
                   <div className="space-y-2 pt-2">
+                    {activeLocation.slug && (
+                      <a
+                        href={`/reviews/${activeLocation.slug}`}
+                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-lg shadow-amber-500/20 transition-all cursor-pointer"
+                      >
+                        <span>Full Review, Likes/Dislikes &amp; Menu</span>
+                      </a>
+                    )}
+
                     <a
                       href={activeLocation.googleMapsUrl}
                       target="_blank"
@@ -557,7 +566,11 @@ export default function InteractiveMap({
                       <span>{loc.city}, MS</span>
                     </div>
                     <h3 className="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
-                      {loc.name}
+                      {loc.slug ? (
+                        <a href={`/reviews/${loc.slug}`}>{loc.name}</a>
+                      ) : (
+                        loc.name
+                      )}
                     </h3>
                     <p className="text-xs text-zinc-300 mt-1">{loc.address}</p>
                     <p className="text-xs text-zinc-300 mt-2 line-clamp-2">
@@ -574,7 +587,15 @@ export default function InteractiveMap({
                     </p>
                   </div>
 
-                  <div className="pt-2 flex items-center gap-2 border-t border-zinc-800/80">
+                  <div className="pt-2 flex flex-wrap items-center gap-2 border-t border-zinc-800/80">
+                    {loc.slug && (
+                      <a
+                        href={`/reviews/${loc.slug}`}
+                        className="flex-1 flex items-center justify-center py-2 px-2.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 transition-colors"
+                      >
+                        Full Review &amp; Menu
+                      </a>
+                    )}
                     <a
                       href={loc.googleMapsUrl}
                       target="_blank"
@@ -585,10 +606,10 @@ export default function InteractiveMap({
                           city: loc.city,
                         })
                       }
-                      className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-bold bg-zinc-800 hover:bg-blue-600 text-zinc-100 hover:text-white transition-colors"
+                      className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-xs font-bold bg-zinc-800 hover:bg-blue-600 text-zinc-100 hover:text-white transition-colors"
                     >
                       <Navigation className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>Google Maps</span>
+                      <span>Maps</span>
                     </a>
                     {loc.youtubeEpisodeId ? (
                       <button

@@ -1,19 +1,40 @@
 # The Local Guide MS
 
-> Eat Local. Support Local. — Official companion website for The Local Guide MS YouTube channel (@TheLocalGuide-MS) and Google Maps Local Guide profile (2.2M+ photo views), hosted by Damein & Mary in Jackson, Mississippi.
+> Eat Local. Support Local. — Official companion website for The Local Guide MS YouTube channel (@TheLocalGuide-MS) and Level 7 Google Maps Local Guide profile (122+ reviews, 2.2M+ photo views), hosted by Damein Donald & Mary in Jackson, Mississippi.
 
-The Local Guide MS explores authentic mom-and-pop restaurants, slow-smoked BBQ pits, Delta tamale stands, Gulf Coast seafood shacks, and small-town road trips across Mississippi. Every review is 100% independent — Damein and Mary pay for their own meals, film first-person POV walkthroughs on Meta Smart Glasses and 4K cameras, and share honest verdicts on flavor, portions, prices, and hospitality.
+The Local Guide MS publishes 100% independent, self-paid Mississippi restaurant reviews, first-person POV YouTube episodes, Likes vs. Dislikes breakdowns, official menu & social links, and weekend road trip itineraries.
 
-## Key Highlights & Coverage
-- **Hosts**: Damein Donald (Level 7 Google Maps Local Guide, 122+ reviews, 2.2M+ photo views) & Mary
-- **Home Base**: Jackson Metro, Mississippi (covering Jackson, Fondren, Pearl, Clinton, Madison, Clarksdale, Greenville, Oxford, Natchez, Hattiesburg, Biloxi, and Ocean Springs)
-- **Featured Video Reviews**: The Pig & Pint (Fondren / Jackson, MS), Moss Creek Fish House ($12.50 lunch special in Pearl, MS), ChopSticks Buffet (Clinton, MS), Mississippi State Fair (Jackson, MS), and Memphis Pyramid Cypress Swamp road trip
+## Official Channels & Authority Profiles
+- [Official Website & Interactive Mississippi Map](https://thelocalguidems.com/): Live Google Maps food directory, video reviews, and guides
+- [YouTube Channel (@TheLocalGuide-MS)](https://www.youtube.com/@TheLocalGuide-MS): Watch first-person POV Mississippi restaurant reviews & Shorts with Damein & Mary
+- [Damein Donald's Google Maps Profile (2.2M+ Views)](https://www.google.com/maps/contrib/117260776182521505370/reviews): Verified Level 7 Google Local Guide reviews & dish photos
+- [Complete AI Dossier (llms-full.txt)](https://thelocalguidems.com/llms-full.txt): Full structured dataset of every reviewed restaurant, price, Likes/Dislikes, official menu, and YouTube link
+- [Suggest a Mississippi Spot](https://thelocalguidems.com/suggest-a-spot): Invite Damein & Mary or recommend a local gem
 
-## Official Pages & Directories
-- [The Local Guide MS Official Hub](https://thelocalguidems.com/): Interactive Mississippi food map, latest YouTube reviews, and live Google Maps verdicts
-- [Mississippi Restaurant & Hidden Gem Directory](https://thelocalguidems.com/spots): Full curated list of reviewed BBQ joints, seafood shacks, diners, and historic stops across Mississippi
-- [Curated Mississippi Food Road Trips](https://thelocalguidems.com/road-trips): Step-by-step weekend itineraries along the Highway 61 Blues & Tamales Trail, Gulf Coast Highway 90, and Jackson Metro
-- [Suggest a Spot or Invite Us to Review](https://thelocalguidems.com/suggest-a-spot): Submit a local Mississippi restaurant, diner, or hidden gem to Damein & Mary's filming queue
-- [Watch on YouTube (@TheLocalGuide-MS)](https://www.youtube.com/@TheLocalGuide-MS): Official YouTube channel with POV restaurant reviews and Shorts
-- [Damein's Google Maps Local Guide Profile](https://www.google.com/maps/contrib/117260776182521505370/reviews): 122+ verified Google Maps restaurant reviews and 2.2M+ dish photo views
-- [Agentic Resource Discovery Manifest (ard.json)](https://thelocalguidems.com/.well-known/ard.json): Machine-readable ARD v1.0 discovery manifest
+## Mississippi City & Category Guides
+- [Best Local Restaurants in Jackson, MS (Honest Guide)](https://thelocalguidems.com/guides/best-restaurants-jackson-ms): Where locals actually eat in Jackson, MS: Fondren BBQ at The Pig & Pint, 1946 burgers at Brent's Drugs, downtown gumbo at Hal & Mal's & videos.
+- [Best Lunch & Local Eats in Pearl, Clinton & Madison, MS](https://thelocalguidems.com/guides/best-lunch-pearl-clinton-madison-ms): Top self-paid restaurant picks in Pearl, Clinton & Madison, MS: Moss Creek's $12.50 catfish lunch, ChopSticks Buffet, Los Parrilleros & Mama Hamil's.
+- [Best BBQ in Mississippi: Fondren, Delta & Coast Picks](https://thelocalguidems.com/guides/best-bbq-in-mississippi): Explore Mississippi's top smokehouses reviewed by The Local Guide MS: The Pig & Pint (Jackson), Abe's Crossroads BBQ (Clarksdale), The Shed & Hamil's.
+- [The Local Guide MS: Mississippi Food YouTube & Reviews](https://thelocalguidems.com/guides/mississippi-food-youtube-channel): Meet Damein & Mary of The Local Guide MS (@TheLocalGuide-MS) — independent POV Mississippi restaurant reviews, 2.2M+ Google Maps views & food maps.
+
+## Individual Restaurant & Attraction Reviews
+- [The Pig & Pint (Jackson, MS) — 5.0/5](https://thelocalguidems.com/reviews/the-pig-and-pint-jackson-ms): Fondren neighborhood smokehouse serving knife-free tender brisket, smoked chicken, green-chile mac & cheese, and three signature house BBQ sauces. | [YouTube Video Review](https://www.youtube.com/watch?v=8P_JgaugMtc)
+- [Moss Creek Fish House (Pearl, MS) — 5.0/5](https://thelocalguidems.com/reviews/moss-creek-fish-house-pearl-ms): Beloved Pearl fish house famous for its $12.50 Tue–Fri catfish lunch special, ultra-crispy hushpuppies, and genuine Rankin County hospitality. | [YouTube Video Review](https://www.youtube.com/watch?v=eGGlgI2LxI4)
+- [ChopSticks Buffet (Clinton, MS) — 4.8/5](https://thelocalguidems.com/reviews/chopsticks-buffet-clinton-ms): Friendly family-run buffet off I-20 in Clinton serving hot egg rolls, wontons, and the biggest flaky fried fish fillets we have seen on a local buffet. | [YouTube Video Review](https://www.youtube.com/watch?v=Gp4klWno0lI)
+- [Mama Hamil's Southern Cookin' and BBQ (Madison, MS) — 5.0/5](https://thelocalguidems.com/reviews/mama-hamils-madison-ms): Legendary Madison all-you-can-eat southern buffet serving slow-smoked BBQ, crispy fried chicken, scratch vegetables, and warm cobbler.
+- [Los Parrilleros (Clinton, MS) — 5.0/5](https://thelocalguidems.com/reviews/los-parrilleros-clinton-ms): Clinton powerhouse on Springridge Rd serving huge sizzling fajita platters, fresh queso, and full table feasts for under $40.
+- [Applebee's Grill + Bar (Clinton) (Clinton, MS) — 4.2/5](https://thelocalguidems.com/reviews/applebees-clinton-ms-bourbon-street-chicken-penne): Side-by-side Menu Photo vs. Reality video test in Clinton, MS putting the Bourbon Street Chicken & Andouille Penne to the test. | [YouTube Video Review](https://www.youtube.com/watch?v=2JXq8A6KS2I)
+- [Takara Grill & Sushi (Clinton, MS) — 1.0/5](https://thelocalguidems.com/reviews/takara-grill-and-sushi-clinton-ms): Proof that The Local Guide MS is 100% unfiltered: a clean, nicely decorated Clinton dining room held back by rough service and wait times on our visit.
+- [Brent's Drugs & Soda Fountain (Jackson, MS) — 4.9/5](https://thelocalguidems.com/reviews/brents-drugs-jackson-ms): Historic 1946 Fondren soda fountain featured in 'The Help' — serving lacy-edge smash burgers, breakfast plates, and thick malts.
+- [Abe's Bar-B-Q (Clarksdale, MS) — 4.8/5](https://thelocalguidems.com/reviews/abes-bar-b-q-clarksdale-ms): Mississippi's oldest continuously operated BBQ pit (since 1924), sitting right at the Crossroads of Highways 61 & 49 in Clarksdale.
+- [The Shed Barbeque & Blues Joint (Ocean Springs, MS) — 4.9/5](https://thelocalguidems.com/reviews/the-shed-barbeque-ocean-springs-ms): Built from reclaimed tin and wood on the Ocean Springs bayou — Memphis in May Grand Champion BBQ pit with live weekend blues.
+- [Hal & Mal's (Jackson, MS) — 4.7/5](https://thelocalguidems.com/reviews/hal-and-mals-jackson-ms): The soulful heartbeat of downtown Jackson since 1985 inside a historic freight depot — serving dark-roux gumbo, po'boys, and live music.
+- [City Grocery (Oxford, MS) — 4.9/5](https://thelocalguidems.com/reviews/city-grocery-oxford-ms): Chef John Currence's flagship restaurant on Oxford's historic Courthouse Square and home to the South's benchmark shrimp & grits.
+- [Under-The-Hill Saloon & Riverfront (Natchez, MS) — 4.8/5](https://thelocalguidems.com/reviews/under-the-hill-saloon-natchez-ms): 200-year-old Natchez riverboat landing tavern on Silver Street with rocking chairs facing unforgettable Mississippi River sunsets.
+- [Doe's Eat Place (Greenville, MS) — 4.8/5](https://thelocalguidems.com/reviews/does-eat-place-greenville-ms): Walk straight through the blazing kitchen on Nelson Street in Greenville to eat world-famous broiled porterhouse steaks and Delta tamales since 1941.
+- [Mary Mahoney's Old French House (Biloxi, MS) — 4.8/5](https://thelocalguidems.com/reviews/mary-mahoneys-biloxi-ms): Historic 1737 brick courtyard home shaded by the Patriarch Live Oak in Biloxi — serving legendary Gulf lump crab and flounder.
+- [Tishomingo State Park & Bear Creek (Tishomingo, MS) — 4.9/5](https://thelocalguidems.com/reviews/tishomingo-state-park-ms): Appalachian foothill sandstone cliffs, moss-covered boulders, and the iconic wooden swinging bridge right off Natchez Trace Milepost 304.
+- [Sal & Mookie's New York Pizza & Ice Cream (Jackson, MS) — 4.7/5](https://thelocalguidems.com/reviews/sal-and-mookies-jackson-ms): Brick-oven New York style pizza paired with a full scoop parlor and skyscraper sundaes at The District at Eastover in Jackson.
+- [The Porter Public House (Hattiesburg, MS) — 4.8/5](https://thelocalguidems.com/reviews/the-porter-public-house-hattiesburg-ms): Historic Downtown Hattiesburg public house pouring regional Mississippi craft beers alongside scratch burgers and sandwiches.
+- [Mississippi State Fairgrounds (Jackson, MS) — 4.6/5](https://thelocalguidems.com/reviews/mississippi-state-fairgrounds-jackson-ms): First-person POV walk through the Mississippi State Fair in downtown Jackson — classic cars, alpacas, space meteorite exhibit, and night fireworks. | [YouTube Video Review](https://www.youtube.com/watch?v=Z8W7oJ_NF7c)
+- [Bass Pro Shops at the Pyramid (I-55 Road Trip) (Memphis (North Border), MS) — 4.9/5](https://thelocalguidems.com/reviews/bass-pro-shops-pyramid-memphis-road-trip): Just across the North Mississippi state line up I-55 — a 32-story pyramid housing a live indoor cypress swamp, monster catfish, and alligators. | [YouTube Video Review](https://www.youtube.com/watch?v=tv0peH1ghtI)

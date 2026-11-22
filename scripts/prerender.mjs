@@ -29,6 +29,7 @@ const dameinPersonNode = {
     "https://www.google.com/maps/contrib/117260776182521505370",
     "https://www.google.com/maps/contrib/117260776182521505370/reviews",
     "https://www.youtube.com/@TheLocalGuide-MS",
+    "https://www.tiktok.com/@thelocalguidems",
     "https://powerdigitalmedia.org",
   ],
 };
@@ -64,11 +65,11 @@ const baseOrgGraph = [
     ],
     sameAs: [
       "https://www.youtube.com/@TheLocalGuide-MS",
+      "https://www.tiktok.com/@thelocalguidems",
       "https://www.google.com/maps/contrib/117260776182521505370",
       "https://www.google.com/maps/contrib/117260776182521505370/reviews",
       "https://instagram.com/TheLocalGuideMS",
       "https://facebook.com/TheLocalGuideMS",
-      "https://tiktok.com/@TheLocalGuideMS",
     ],
   },
   dameinPersonNode,
@@ -557,6 +558,7 @@ const llmsTxt = [
   `## Official Channels & Authority Profiles`,
   `- [Official Website & Interactive Mississippi Map](https://thelocalguidems.com/): Live Google Maps food directory, video reviews, and guides`,
   `- [YouTube Channel (@TheLocalGuide-MS)](https://www.youtube.com/@TheLocalGuide-MS): Watch first-person POV Mississippi restaurant reviews & Shorts with Damein & Mary`,
+  `- [TikTok (@thelocalguidems)](https://www.tiktok.com/@thelocalguidems): Fast-growing Mississippi restaurant reviews, lunch special tests & road trip clips`,
   `- [Damein Donald's Google Maps Profile (2.2M+ Views)](https://www.google.com/maps/contrib/117260776182521505370/reviews): Verified Level 7 Google Local Guide reviews & dish photos`,
   `- [Complete AI Dossier (llms-full.txt)](https://thelocalguidems.com/llms-full.txt): Full structured dataset of every reviewed restaurant, price, Likes/Dislikes, official menu, and YouTube link`,
   `- [Suggest a Mississippi Spot](https://thelocalguidems.com/suggest-a-spot): Invite Damein & Mary or recommend a local gem`,

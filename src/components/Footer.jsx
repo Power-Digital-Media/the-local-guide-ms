@@ -1,6 +1,6 @@
 import React from "react";
 import { MapPin, ArrowUp } from "lucide-react";
-import { YouTubeIcon, InstagramIcon, FacebookIcon } from "./Icons";
+import { YouTubeIcon, TikTokIcon, InstagramIcon, FacebookIcon } from "./Icons";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
 
@@ -34,18 +34,33 @@ export default function Footer({ onOpenSuggestModal }) {
             </div>
           </div>
 
-          <a
-            href={channelConfig.subscribeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() =>
-              trackGuideEvent("youtube_subscribe_click", { location: "footer" })
-            }
-            className="px-6 py-3.5 rounded-xl font-bold text-sm bg-red-700 hover:bg-red-600 text-white shadow-xl shadow-red-900/50 flex items-center gap-2 shrink-0 hover:scale-105 transition-all"
-          >
-            <YouTubeIcon className="w-5 h-5 fill-white" />
-            <span>Subscribe @TheLocalGuide-MS</span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <a
+              href={channelConfig.socials.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackGuideEvent("tiktok_follow_click", { location: "footer_banner" })
+              }
+              className="px-5 py-3.5 rounded-xl font-bold text-sm bg-zinc-950 hover:bg-zinc-800 border border-cyan-500/40 text-cyan-300 hover:text-white flex items-center gap-2 transition-all"
+            >
+              <TikTokIcon className="w-4 h-4" aria-hidden="true" />
+              <span>TikTok @thelocalguidems</span>
+            </a>
+
+            <a
+              href={channelConfig.subscribeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                trackGuideEvent("youtube_subscribe_click", { location: "footer" })
+              }
+              className="px-6 py-3.5 rounded-xl font-bold text-sm bg-red-700 hover:bg-red-600 text-white shadow-xl shadow-red-900/50 flex items-center gap-2 hover:scale-105 transition-all"
+            >
+              <YouTubeIcon className="w-5 h-5 fill-white" />
+              <span>Subscribe @TheLocalGuide-MS</span>
+            </a>
+          </div>
         </div>
 
         {/* 4 Column Footer Links */}
@@ -68,7 +83,7 @@ export default function Footer({ onOpenSuggestModal }) {
             <p className="text-zinc-300 leading-relaxed">
               Eat Local. Support Local. Celebrating Mississippi&apos;s culinary roots, family-run diners, road trips, and small businesses.
             </p>
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-2.5 pt-1">
               <a
                 href={channelConfig.youtubeUrl}
                 target="_blank"
@@ -77,6 +92,18 @@ export default function Footer({ onOpenSuggestModal }) {
                 aria-label="Watch on YouTube"
               >
                 <YouTubeIcon className="w-4 h-4 fill-current" />
+              </a>
+              <a
+                href={channelConfig.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGuideEvent("tiktok_follow_click", { location: "footer_icons" })
+                }
+                className="p-2.5 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl bg-zinc-900 border border-zinc-800 text-cyan-300 hover:text-zinc-950 hover:bg-cyan-400 transition-colors"
+                aria-label="Follow @thelocalguidems on TikTok"
+              >
+                <TikTokIcon className="w-4 h-4 fill-current" />
               </a>
               <a
                 href={channelConfig.googleMapsProfileUrl}

@@ -1,6 +1,6 @@
 ﻿import React, { useState, useEffect } from "react";
 import { MapPin, Compass, Tv, Route, PlusCircle, Menu, X } from "lucide-react";
-import { YouTubeIcon } from "./Icons";
+import { YouTubeIcon, TikTokIcon } from "./Icons";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
 
@@ -101,6 +101,19 @@ export default function Navbar({ onOpenSuggestModal }) {
           </a>
 
           <a
+            href={channelConfig.socials.tiktok}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackGuideEvent("tiktok_follow_click", { location: "navbar" })}
+            aria-label="Follow @thelocalguidems on TikTok"
+            title="Follow @thelocalguidems on TikTok"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-zinc-900 border border-zinc-700 hover:border-cyan-400/60 text-zinc-100 hover:text-cyan-300 transition-all"
+          >
+            <TikTokIcon className="w-4 h-4" aria-hidden="true" />
+            <span className="hidden xl:inline">TikTok</span>
+          </a>
+
+          <a
             href={channelConfig.subscribeUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -170,6 +183,16 @@ export default function Navbar({ onOpenSuggestModal }) {
             >
               <PlusCircle className="w-4 h-4 text-amber-400" aria-hidden="true" />
               <span>Suggest a Mississippi Spot</span>
+            </a>
+            <a
+              href={channelConfig.socials.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackGuideEvent("tiktok_follow_click", { location: "mobile_drawer" })}
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold bg-zinc-900 border border-cyan-500/40 text-cyan-300 hover:bg-zinc-800"
+            >
+              <TikTokIcon className="w-4 h-4" aria-hidden="true" />
+              <span>Follow @thelocalguidems on TikTok</span>
             </a>
             <a
               href={channelConfig.subscribeUrl}

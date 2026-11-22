@@ -325,20 +325,39 @@ export default function SpotReviewPage({ spot }) {
                 </h2>
               </div>
 
-              <a
-                href={channelConfig.subscribeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  trackGuideEvent("youtube_subscribe_click", {
-                    location: `review_${spot.slug}`,
-                  })
-                }
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-red-700 hover:bg-red-600 text-white shadow-lg shadow-red-900/40 shrink-0"
-              >
-                <YouTubeIcon className="w-4 h-4 fill-white" />
-                <span>Subscribe @TheLocalGuide-MS</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+                {spot.tiktokVideoUrl && (
+                  <a
+                    href={spot.tiktokVideoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackGuideEvent("tiktok_video_click", {
+                        location: `review_${spot.slug}`,
+                      })
+                    }
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-zinc-950 hover:bg-zinc-800 border border-cyan-500/40 text-cyan-300 hover:text-white transition-all"
+                  >
+                    <TikTokBadgeIcon className="w-4 h-4" />
+                    <span>Watch on TikTok</span>
+                  </a>
+                )}
+
+                <a
+                  href={channelConfig.subscribeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackGuideEvent("youtube_subscribe_click", {
+                      location: `review_${spot.slug}`,
+                    })
+                  }
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-red-700 hover:bg-red-600 text-white shadow-lg shadow-red-900/40"
+                >
+                  <YouTubeIcon className="w-4 h-4 fill-white" />
+                  <span>Subscribe @TheLocalGuide-MS</span>
+                </a>
+              </div>
             </div>
 
             <div className="relative aspect-video rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-800">
@@ -389,15 +408,28 @@ export default function SpotReviewPage({ spot }) {
               <span>
                 100% self-paid meal • Filmed on location in {spot.city}, Mississippi
               </span>
-              <a
-                href={`https://www.youtube.com/watch?v=${spot.youtubeEpisodeId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-300 hover:text-red-200 font-bold inline-flex items-center gap-1 hover:underline"
-              >
-                <span>Open Directly on YouTube</span>
-                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                {spot.tiktokVideoUrl && (
+                  <a
+                    href={spot.tiktokVideoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-300 hover:text-cyan-200 font-bold inline-flex items-center gap-1 hover:underline"
+                  >
+                    <span>Watch @thelocalguidems TikTok</span>
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  </a>
+                )}
+                <a
+                  href={`https://www.youtube.com/watch?v=${spot.youtubeEpisodeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red-300 hover:text-red-200 font-bold inline-flex items-center gap-1 hover:underline"
+                >
+                  <span>Open Directly on YouTube</span>
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </section>
         )}

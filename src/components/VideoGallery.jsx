@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import { Play, ExternalLink, X, CheckCircle2 } from "lucide-react";
-import { YouTubeIcon, MetaGlassesIcon } from "./Icons";
+import { YouTubeIcon, TikTokIcon, MetaGlassesIcon } from "./Icons";
 import { videosData } from "../data/videos";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
@@ -88,9 +88,25 @@ export default function VideoGallery({
         {/* Header with Channel Hook */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-600/15 border border-red-500/30 text-red-300 text-xs font-bold uppercase tracking-wider mb-2">
-              <YouTubeIcon className="w-3.5 h-3.5 fill-red-500 text-red-500" />
-              <span>Official YouTube Channel</span>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-600/15 border border-red-500/30 text-red-300 text-xs font-bold uppercase tracking-wider">
+                <YouTubeIcon className="w-3.5 h-3.5 fill-red-500 text-red-500" />
+                <span>YouTube @TheLocalGuide-MS</span>
+              </div>
+              <a
+                href={channelConfig.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGuideEvent("tiktok_follow_click", {
+                    location: "video_gallery_badge",
+                  })
+                }
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-cyan-500/15 border border-cyan-500/30 hover:border-cyan-400 text-cyan-300 text-xs font-bold uppercase tracking-wider transition-colors"
+              >
+                <TikTokIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>TikTok @thelocalguidems</span>
+              </a>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl text-white tracking-wide uppercase">
               Latest Video Reviews &amp; Shorts
@@ -121,20 +137,36 @@ export default function VideoGallery({
               </div>
               <p className="text-[11px] text-zinc-300">@TheLocalGuide-MS</p>
             </div>
-            <a
-              href={channelConfig.subscribeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() =>
-                trackGuideEvent("youtube_subscribe_click", {
-                  location: "video_gallery",
-                })
-              }
-              className="px-4 py-2 rounded-xl text-xs font-bold bg-red-700 hover:bg-red-600 text-white shadow-md shadow-red-900/30 flex items-center gap-1.5 transition-all"
-            >
-              <YouTubeIcon className="w-3.5 h-3.5 fill-white" />
-              <span>Subscribe</span>
-            </a>
+            <div className="flex flex-wrap items-center gap-2">
+              <a
+                href={channelConfig.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGuideEvent("tiktok_follow_click", {
+                    location: "video_gallery",
+                  })
+                }
+                className="px-3.5 py-2 rounded-xl text-xs font-bold bg-zinc-950 hover:bg-zinc-800 border border-cyan-500/40 text-cyan-300 hover:text-white flex items-center gap-1.5 transition-all"
+              >
+                <TikTokIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>TikTok</span>
+              </a>
+              <a
+                href={channelConfig.subscribeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGuideEvent("youtube_subscribe_click", {
+                    location: "video_gallery",
+                  })
+                }
+                className="px-4 py-2 rounded-xl text-xs font-bold bg-red-700 hover:bg-red-600 text-white shadow-md shadow-red-900/30 flex items-center gap-1.5 transition-all"
+              >
+                <YouTubeIcon className="w-3.5 h-3.5 fill-white" />
+                <span>Subscribe</span>
+              </a>
+            </div>
           </div>
         </div>
 

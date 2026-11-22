@@ -1,6 +1,6 @@
 import React from "react";
 import { MapPin, Heart, CheckCircle } from "lucide-react";
-import { YouTubeIcon, MetaGlassesIcon } from "./Icons";
+import { YouTubeIcon, TikTokIcon, MetaGlassesIcon } from "./Icons";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
 
@@ -65,7 +65,7 @@ export default function AboutHost() {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href={channelConfig.subscribeUrl}
                 target="_blank"
@@ -79,6 +79,21 @@ export default function AboutHost() {
               >
                 <YouTubeIcon className="w-4 h-4 fill-white" />
                 <span>Join Our Community on YouTube</span>
+              </a>
+
+              <a
+                href={channelConfig.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  trackGuideEvent("tiktok_follow_click", {
+                    location: "about_host",
+                  })
+                }
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-zinc-900 hover:bg-zinc-800 border border-cyan-500/40 text-cyan-300 hover:text-white transition-all"
+              >
+                <TikTokIcon className="w-4 h-4" aria-hidden="true" />
+                <span>Follow @thelocalguidems on TikTok</span>
               </a>
             </div>
           </div>

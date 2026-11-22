@@ -1,6 +1,12 @@
 import React from "react";
 import { MapPin, Compass, Play } from "lucide-react";
-import { YouTubeIcon, MetaGlassesIcon } from "./Icons";
+import {
+  YouTubeIcon,
+  TikTokIcon,
+  FacebookIcon,
+  InstagramIcon,
+  MetaGlassesIcon,
+} from "./Icons";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
 
@@ -47,34 +53,77 @@ export default function Hero() {
               Join <strong className="text-white font-semibold">Damein &amp; Mary</strong> on first-person POV food tours across Jackson, Pearl, Clinton, Madison, the Delta, and the Mississippi Gulf Coast — 100% self-funded meals and honest verdicts.
             </p>
 
-            {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
-              <a
-                href="#map-section"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-xl shadow-amber-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
-              >
-                <Compass className="w-5 h-5 text-zinc-950" aria-hidden="true" />
-                <span>Explore Mississippi Map</span>
-              </a>
+            {/* CTA Action & Social Rows */}
+            <div className="space-y-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-[1.3fr_1.15fr_0.85fr] gap-3">
+                <a
+                  href="#map-section"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-xl shadow-amber-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer whitespace-nowrap"
+                >
+                  <Compass className="w-5 h-5 text-zinc-950 shrink-0" aria-hidden="true" />
+                  <span>Explore Mississippi Map</span>
+                </a>
 
-              <a
-                href="#videos-section"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-zinc-900/90 border border-zinc-700 hover:border-red-500/60 hover:bg-zinc-800 text-white shadow-lg transition-all duration-200"
-              >
-                <Play className="w-4 h-4 text-red-400 fill-red-400" aria-hidden="true" />
-                <span>Watch Video Reviews</span>
-              </a>
+                <a
+                  href="#videos-section"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-zinc-900/90 border border-zinc-700 hover:border-red-500/60 hover:bg-zinc-800 text-white shadow-lg transition-all duration-200 whitespace-nowrap"
+                >
+                  <Play className="w-4 h-4 text-red-400 fill-red-400 shrink-0" aria-hidden="true" />
+                  <span>Watch Video Reviews</span>
+                </a>
 
-              <a
-                href={channelConfig.subscribeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackGuideEvent("youtube_subscribe_click", { location: "hero" })}
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-red-700 hover:bg-red-600 text-white transition-all duration-200"
-              >
-                <YouTubeIcon className="w-4 h-4 fill-white" />
-                <span>Subscribe</span>
-              </a>
+                <a
+                  href={channelConfig.subscribeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGuideEvent("youtube_subscribe_click", { location: "hero" })}
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-red-700 hover:bg-red-600 text-white transition-all duration-200 whitespace-nowrap"
+                >
+                  <YouTubeIcon className="w-4 h-4 fill-white shrink-0" />
+                  <span>Subscribe</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <a
+                  href={channelConfig.socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGuideEvent("tiktok_follow_click", { location: "hero" })}
+                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold bg-zinc-900/95 border border-cyan-500/40 hover:border-cyan-400 hover:bg-zinc-800 text-white transition-all duration-200 whitespace-nowrap"
+                >
+                  <TikTokIcon className="w-4 h-4 text-cyan-300 shrink-0" aria-hidden="true" />
+                  <span>
+                    TikTok <span className="hidden xl:inline">@thelocalguidems</span>
+                  </span>
+                </a>
+
+                <a
+                  href={channelConfig.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGuideEvent("facebook_follow_click", { location: "hero" })}
+                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold bg-zinc-900/95 border border-blue-500/40 hover:border-blue-400 hover:bg-zinc-800 text-white transition-all duration-200 whitespace-nowrap"
+                >
+                  <FacebookIcon className="w-4 h-4 text-blue-400 fill-current shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className="hidden xl:inline">Follow on </span>Facebook
+                  </span>
+                </a>
+
+                <a
+                  href={channelConfig.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackGuideEvent("instagram_follow_click", { location: "hero" })}
+                  className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold bg-zinc-900/95 border border-pink-500/40 hover:border-pink-400 hover:bg-zinc-800 text-white transition-all duration-200 whitespace-nowrap"
+                >
+                  <InstagramIcon className="w-4 h-4 text-pink-400 shrink-0" aria-hidden="true" />
+                  <span>
+                    <span className="hidden xl:inline">Follow on </span>Instagram
+                  </span>
+                </a>
+              </div>
             </div>
 
             {/* Quick Feature Badges */}

@@ -104,12 +104,23 @@ function buildSpotReviewSchema(spot) {
   const { postalCode, addressRegion, streetAddress } =
     parsePostalAndRegion(spot);
 
+  const galleryImages =
+    spot.photos && spot.photos.length > 0
+      ? spot.photos.map((p) =>
+          p.src.startsWith("http")
+            ? p.src
+            : `https://thelocalguidems.com${p.src}`
+        )
+      : [
+          spot.image.startsWith("http")
+            ? spot.image
+            : `https://thelocalguidems.com${spot.image}`,
+        ];
+
   const itemReviewed = {
     "@type": spot.schemaEntityType || "Restaurant",
     name: spot.name,
-    image: spot.image.startsWith("http")
-      ? spot.image
-      : `https://thelocalguidems.com${spot.image}`,
+    image: galleryImages,
     address: {
       "@type": "PostalAddress",
       streetAddress,

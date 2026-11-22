@@ -1,53 +1,113 @@
 ﻿export const itinerariesData = [
   {
     id: "itin-1",
-    title: "Highway 61 Blues & Tamales Trail",
-    subtitle: "From Memphis Border through Clarksdale to Vicksburg",
-    duration: "2 Days (Weekend)",
-    driveDistance: "195 Miles",
-    stopsCount: 6,
-    badge: "Most Popular Road Trip",
-    image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["The Crossroads in Clarksdale", "Doe's Eat Place in Greenville", "Ground Zero Blues Club", "Abe's BBQ & Tamales"],
+    title: "US-49 Smokehouse & 12/10 Burger Run",
+    subtitle: "Florence through Fondren up Highway 49 to Flora & Bentonia",
+    duration: "1 Full Day",
+    driveDistance: "54 Miles",
+    stopsCount: 4,
+    badge: "100% Real-Tested Trail",
+    highlights: [
+      "Fried Pickles at Logan Rivers (Florence)",
+      "Fall-Apart Brisket at Pig & Pint (Fondren)",
+      "Carhop Shake at Bumpers (Flora)",
+      "12/10 Outdoor-Grilled Burger (Bentonia)",
+    ],
     stops: [
-      { name: "Abe's Bar-B-Q & Crossroads", city: "Clarksdale", stopType: "Lunch & Blues History" },
-      { name: "Delta Blues Museum", city: "Clarksdale", stopType: "Culture" },
-      { name: "Doe's Eat Place", city: "Greenville", stopType: "Dinner & Famous Steaks" },
-      { name: "B.B. King Museum", city: "Indianola", stopType: "Morning Tour" },
-      { name: "Vicksburg National Military Park", city: "Vicksburg", stopType: "Scenic Overlook" }
-    ]
+      {
+        name: "Logan Rivers Smokehouse",
+        city: "Florence",
+        stopType: "Fried Pickles & BBQ Starter",
+      },
+      {
+        name: "The Pig & Pint",
+        city: "Jackson (Fondren)",
+        stopType: "5★ Brisket & Green-Chile Mac",
+      },
+      {
+        name: "Bumpers Drive-In of America",
+        city: "Flora",
+        stopType: "US-49 Carhop Shake Break",
+      },
+      {
+        name: "Hall of Fame Restaurant",
+        city: "Bentonia",
+        stopType: "12/10 Outdoor-Grilled Cheeseburger",
+      },
+    ],
   },
   {
     id: "itin-2",
-    title: "Mississippi Gulf Coast Seafood & Sunset Run",
-    subtitle: "Ocean Springs to Bay St. Louis along Scenic Highway 90",
-    duration: "3 Days (Full Weekend)",
-    driveDistance: "48 Miles",
-    stopsCount: 5,
-    badge: "Coastal Foodie",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["The Shed Barbeque on the Bayou", "Mary Mahoney's 2,000-year-old oak", "Ocean Springs Downtown Art Walk", "Biloxi Lighthouse"],
+    title: "I-20 Clinton, Pearl & Brandon Flavor Loop",
+    subtitle: "$12.50 Catfish Lunch, Cajun Crawfish, Fajitas & Outdoor Concerts",
+    duration: "1–2 Days (Weekend)",
+    driveDistance: "34 Miles",
+    stopsCount: 4,
+    badge: "Central MS Favorites",
+    highlights: [
+      "$12.50 Catfish Lunch at Moss Creek (Pearl)",
+      "Lake Charles-Approved Crawfish at T'Beaux's",
+      "Under-$40 Feast at Los Parrilleros (Clinton)",
+      "Live Show at Brandon Amphitheater",
+    ],
     stops: [
-      { name: "Downtown Ocean Springs & Bakery", city: "Ocean Springs", stopType: "Coffee & Morning Walk" },
-      { name: "The Shed Barbeque", city: "Ocean Springs Bayou", stopType: "Pecan Smoked Ribs" },
-      { name: "Mary Mahoney's Old French House", city: "Biloxi", stopType: "Lump Crab Dinner" },
-      { name: "Old Town Bay St. Louis", city: "Bay St. Louis", stopType: "Sunset Cocktails & Harbor" }
-    ]
+      {
+        name: "Moss Creek Fish House",
+        city: "Pearl",
+        stopType: "$12.50 Catfish & Crispy Hushpuppies",
+      },
+      {
+        name: "T'Beaux's Crawfish & Catering",
+        city: "Clinton",
+        stopType: "Boiled Crawfish & Flaky Catfish",
+      },
+      {
+        name: "Los Parrilleros",
+        city: "Clinton",
+        stopType: "Sizzling Fajitas & Queso Dinner",
+      },
+      {
+        name: "Brandon Amphitheater",
+        city: "Brandon",
+        stopType: "Live Evening Concert Under the Stars",
+      },
+    ],
   },
   {
     id: "itin-3",
-    title: "Jackson Metro Flavor Sprint",
-    subtitle: "Fondren Art District, Downtown Blues, & Soul Food",
-    duration: "1 Day (Action-Packed)",
-    driveDistance: "22 Miles",
+    title: "I-55 North Buffet-to-Pyramid Road Trip",
+    subtitle: "Madison's Legendary BBQ Buffet up I-55 to Southaven & the Pyramid",
+    duration: "2 Days (Weekend)",
+    driveDistance: "198 Miles",
     stopsCount: 4,
-    badge: "Metro Local",
-    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=80",
-    highlights: ["Brent's Drugs Malt Counter", "Mississippi State Capitol", "Hal & Mal's Gumbo", "District at Eastover"],
+    badge: "Family Highway Trip",
+    highlights: [
+      "Mama Hamil's Ribs & Red Beans (Madison)",
+      "I-55 Buffet Pit Stop (Batesville)",
+      "Arena Night at Landers Center (Southaven)",
+      "Indoor Cypress Swamp & Gators (Pyramid)",
+    ],
     stops: [
-      { name: "Brent's Drugs 1946 Soda Fountain", city: "Fondren / Jackson", stopType: "Lunch & Malts" },
-      { name: "Mississippi State Capitol & Museum", city: "Downtown Jackson", stopType: "Historic Sightseeing" },
-      { name: "Hal & Mal's", city: "Jackson", stopType: "Gumbo & Live Blues" }
-    ]
-  }
+      {
+        name: "Mama Hamil's BBQ Buffet",
+        city: "Madison",
+        stopType: "5★ Ribs, Catfish & 1977 History",
+      },
+      {
+        name: "New China Buffet",
+        city: "Batesville",
+        stopType: "Quick I-55 Exit 243 Pit Stop",
+      },
+      {
+        name: "Landers Center",
+        city: "Southaven",
+        stopType: "North MS Arena Event (Bring a Jacket!)",
+      },
+      {
+        name: "Bass Pro Shops at the Pyramid",
+        city: "Memphis Border",
+        stopType: "Free Indoor Cypress Swamp, Catfish & Gators",
+      },
+    ],
+  },
 ];

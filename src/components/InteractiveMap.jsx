@@ -32,11 +32,8 @@ const categories = [
 const regions = [
   "All Mississippi",
   "Central MS",
-  "Gulf Coast",
-  "Delta",
   "North MS",
-  "Southwest MS",
-  "Pine Belt",
+  "Southwest MS / Border",
 ];
 
 export default function InteractiveMap({
@@ -47,8 +44,8 @@ export default function InteractiveMap({
   const [selectedRegion, setSelectedRegion] = useState("All Mississippi");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeLocation, setActiveLocation] = useState(locationsData[0]);
-  const [mapCenter, setMapCenter] = useState([32.3547, -89.85]);
-  const [mapZoom, setMapZoom] = useState(7.4);
+  const [mapCenter, setMapCenter] = useState([32.35, -90.22]);
+  const [mapZoom, setMapZoom] = useState(9.2);
   const [viewMode, setViewMode] = useState(defaultViewMode);
   const [shouldMountMap, setShouldMountMap] = useState(false);
   const sectionRef = useRef(null);

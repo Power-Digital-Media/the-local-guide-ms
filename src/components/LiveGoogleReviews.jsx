@@ -20,10 +20,10 @@ export default function LiveGoogleReviews() {
               <span>Live Google Maps Contributor Feed</span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl text-white tracking-wide uppercase">
-              Damein&apos;s Real Google Reviews
+              Damein&apos;s Real Google Reviews &amp; Photos
             </h2>
             <p className="text-zinc-300 text-sm sm:text-base max-w-2xl mt-1">
-              Direct from Damein&apos;s Level 7 Local Guide profile (122+ reviews, 5,605 points, 2.2M+ views). Unfiltered verdicts — both 5-star legends and honest misses.
+              Direct from Damein&apos;s Level 7 Local Guide profile (122+ reviews, 2.2M+ views) — 100% real visits, real dish photos, 5-star gems, and unfiltered 1-star misses.
             </p>
           </div>
 
@@ -42,30 +42,60 @@ export default function LiveGoogleReviews() {
           {realReviewsData.map((rev) => (
             <article
               key={rev.id}
-              className="bg-zinc-900 border border-zinc-800 hover:border-sky-500/40 rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-4 group transition-all"
+              className="bg-zinc-900 border border-zinc-800 hover:border-sky-500/40 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between group transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-xs mb-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/15 border border-sky-500/30 text-sky-200 uppercase">
-                    {rev.category}
-                  </span>
-                  <span className="text-zinc-300 text-[11px]">{rev.dateAgo}</span>
-                </div>
+                {rev.photoUrl && (
+                  <a
+                    href={rev.slug ? `/reviews/${rev.slug}` : rev.mapsUrl}
+                    className="block relative aspect-video overflow-hidden bg-zinc-950"
+                  >
+                    <img
+                      src={rev.photoUrl}
+                      alt={`${rev.placeName} in ${rev.city} — photographed by Damein Donald`}
+                      width="480"
+                      height="270"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-zinc-950/90 border border-zinc-800 text-[11px] font-bold text-zinc-100 flex items-center gap-1">
+                      <Camera
+                        className="w-3.5 h-3.5 text-sky-300"
+                        aria-hidden="true"
+                      />
+                      <span>+{rev.photosCount} Real Photos</span>
+                    </span>
+                  </a>
+                )}
 
-                <h3 className="font-heading font-bold text-lg text-white group-hover:text-sky-300 transition-colors">
-                  {rev.placeName}
-                </h3>
-                <p className="text-xs text-zinc-300 flex items-center gap-1 mt-1">
-                  <MapPin
-                    className="w-3.5 h-3.5 text-amber-400 shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span>{rev.address}</span>
-                </p>
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/15 border border-sky-500/30 text-sky-200 uppercase">
+                      {rev.category}
+                    </span>
+                    <span className="text-zinc-300 text-[11px]">
+                      {rev.dateAgo}
+                    </span>
+                  </div>
 
-                <div className="flex items-center justify-between py-3 my-2 border-y border-zinc-800">
+                  <h3 className="font-heading font-bold text-lg text-white group-hover:text-sky-300 transition-colors">
+                    {rev.slug ? (
+                      <a href={`/reviews/${rev.slug}`}>{rev.placeName}</a>
+                    ) : (
+                      rev.placeName
+                    )}
+                  </h3>
+                  <p className="text-xs text-zinc-300 flex items-center gap-1">
+                    <MapPin
+                      className="w-3.5 h-3.5 text-amber-400 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>{rev.address}</span>
+                  </p>
+
                   <div
-                    className="flex items-center gap-1"
+                    className="flex items-center gap-1 py-2 border-y border-zinc-800"
                     aria-label={`Rated ${rev.rating} out of 5 stars`}
                   >
                     {[...Array(5)].map((_, i) => (
@@ -84,42 +114,42 @@ export default function LiveGoogleReviews() {
                     </span>
                   </div>
 
-                  <span className="text-xs text-zinc-300 flex items-center gap-1 bg-zinc-950 px-2 py-1 rounded-md border border-zinc-800">
-                    <Camera
-                      className="w-3.5 h-3.5 text-sky-300"
-                      aria-hidden="true"
-                    />
-                    <strong className="text-zinc-100">
-                      +{rev.photosCount} photos
-                    </strong>
-                  </span>
+                  <p className="text-xs text-zinc-200 leading-relaxed italic bg-zinc-950/60 p-3.5 rounded-xl border border-zinc-800/80">
+                    &ldquo;{rev.snippet}&rdquo;
+                  </p>
+
+                  {rev.responseFromOwner && (
+                    <div className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-[11px] text-zinc-300">
+                      <span className="font-bold text-zinc-100 block mb-0.5">
+                        Owner Response:
+                      </span>
+                      {rev.responseFromOwner}
+                    </div>
+                  )}
                 </div>
-
-                <p className="text-xs text-zinc-200 leading-relaxed italic bg-zinc-950/60 p-3.5 rounded-xl border border-zinc-800/80">
-                  &ldquo;{rev.snippet}&rdquo;
-                </p>
-
-                {rev.responseFromOwner && (
-                  <div className="mt-2.5 p-2.5 rounded-lg bg-zinc-950 border border-zinc-800 text-[11px] text-zinc-300">
-                    <span className="font-bold text-zinc-100 block mb-0.5">
-                      Owner Response:
-                    </span>
-                    {rev.responseFromOwner}
-                  </div>
-                )}
               </div>
 
-              <div className="pt-3 border-t border-zinc-800 flex items-center justify-between">
-                <span className="text-[11px] text-zinc-300 font-medium">
-                  Review by Damein Donald
-                </span>
+              <div className="px-6 pb-5 pt-3 border-t border-zinc-800 flex items-center justify-between gap-2">
+                {rev.slug ? (
+                  <a
+                    href={`/reviews/${rev.slug}`}
+                    className="text-xs font-bold text-amber-300 hover:text-amber-200 hover:underline"
+                  >
+                    Full Review &amp; Photo Gallery &rarr;
+                  </a>
+                ) : (
+                  <span className="text-[11px] text-zinc-300 font-medium">
+                    Review by Damein Donald
+                  </span>
+                )}
+
                 <a
                   href={rev.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-bold text-sky-300 hover:text-sky-200 flex items-center gap-1 hover:underline"
+                  className="text-xs font-bold text-sky-300 hover:text-sky-200 flex items-center gap-1 hover:underline shrink-0"
                 >
-                  <span>Open in Maps</span>
+                  <span>Maps</span>
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               </div>

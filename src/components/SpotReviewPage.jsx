@@ -14,6 +14,10 @@ import {
   ExternalLink,
   Utensils,
   Award,
+  Camera,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { YouTubeIcon, InstagramIcon, FacebookIcon } from "./Icons";
 import { locationsData } from "../data/locations";
@@ -36,6 +40,8 @@ function TikTokBadgeIcon({ className = "w-4 h-4" }) {
 
 export default function SpotReviewPage({ spot }) {
   const [playInlineVideo, setPlayInlineVideo] = useState(false);
+  const [lightboxIdx, setLightboxIdx] = useState(null);
+  const photos = spot.photos || [];
 
   const links = spot.officialLinks || {};
   const hasAnyOfficialWeb =
@@ -397,6 +403,124 @@ export default function SpotReviewPage({ spot }) {
         )}
 
         {/* What We Liked vs. What We Disliked / Good to Know */}
+        {photos.length > 0 && (
+          <section
+            aria-labelledby="real-photos-heading"
+            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-sky-300 mb-1">
+                  <Camera className="w-4 h-4 text-sky-300" aria-hidden="true" />
+                  <span>100% Real On-Location Photos</span>
+                </div>
+                <h2
+                  id="real-photos-heading"
+                  className="font-heading font-bold text-xl sm:text-2xl text-white"
+                >
+                  Photos From Our Visit to {spot.name} ({photos.length})
+                </h2>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-zinc-950 border border-zinc-800 text-xs font-semibold text-zinc-300">
+                Shot by Damein Donald • Tap to Enlarge
+              </span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+              {photos.map((ph, idx) => (
+                <button
+                  key={ph.src}
+                  type="button"
+                  onClick={() => setLightboxIdx(idx)}
+                  aria-label={`View photo ${idx + 1} of ${spot.name}: ${ph.alt}`}
+                  className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-800 hover:border-amber-400 bg-zinc-950 group cursor-pointer"
+                >
+                  <img
+                    src={ph.src}
+                    alt={ph.alt}
+                    width="480"
+                    height="360"
+                    loading={idx < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-zinc-950/85 text-[10px] font-bold text-zinc-200">
+                    {idx + 1}/{photos.length}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {lightboxIdx !== null && photos[lightboxIdx] && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Photo ${lightboxIdx + 1} of ${spot.name}`}
+            onClick={() => setLightboxIdx(null)}
+            className="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md flex items-center justify-center p-4"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-4xl w-full flex flex-col items-center gap-3"
+            >
+              <div className="w-full flex items-center justify-between text-xs text-zinc-200">
+                <span className="font-bold">
+                  {spot.name} — Photo {lightboxIdx + 1} of {photos.length}
+                </span>
+                <button
+                  type="button"
+                  aria-label="Close photo viewer"
+                  onClick={() => setLightboxIdx(null)}
+                  className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl bg-zinc-900 border border-zinc-700 text-white hover:bg-zinc-800 cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="relative w-full flex items-center justify-center bg-zinc-900/80 border border-zinc-800 rounded-2xl overflow-hidden max-h-[76vh]">
+                <img
+                  src={photos[lightboxIdx].src}
+                  alt={photos[lightboxIdx].alt}
+                  className="max-h-[74vh] w-auto object-contain"
+                />
+
+                {photos.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      aria-label="Previous photo"
+                      onClick={() =>
+                        setLightboxIdx(
+                          (lightboxIdx - 1 + photos.length) % photos.length
+                        )
+                      }
+                      className="absolute left-3 p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full bg-zinc-950/85 border border-zinc-700 text-white hover:bg-amber-500 hover:text-zinc-950 cursor-pointer"
+                    >
+                      <ChevronLeft className="w-5 h-5" />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Next photo"
+                      onClick={() =>
+                        setLightboxIdx((lightboxIdx + 1) % photos.length)
+                      }
+                      className="absolute right-3 p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full bg-zinc-950/85 border border-zinc-700 text-white hover:bg-amber-500 hover:text-zinc-950 cursor-pointer"
+                    >
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              <p className="text-xs text-zinc-300 text-center max-w-2xl">
+                {photos[lightboxIdx].alt}
+              </p>
+            </div>
+          </div>
+        )}
+
         <section aria-labelledby="pros-cons-heading" className="space-y-5">
           <h2
             id="pros-cons-heading"

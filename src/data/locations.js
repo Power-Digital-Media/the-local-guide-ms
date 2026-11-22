@@ -1,5 +1,86 @@
 export const locationsData = [
   {
+    id: "loc-pig-and-pint",
+    name: "The Pig & Pint",
+    category: "food",
+    categoryLabel: "Award-Winning Fondren BBQ",
+    city: "Jackson",
+    region: "Central MS",
+    address: "3139 N State St, Jackson, MS 39216",
+    lat: 32.3335,
+    lng: -90.1753,
+    rating: 5.0,
+    reviewsCount: 2890,
+    price: "$$",
+    image: "https://i.ytimg.com/vi_webp/8P_JgaugMtc/hqdefault.webp",
+    badge: "5★ Video Review",
+    featured: true,
+    mustTry: "Smoked Brisket, Pulled Pork, Mac & Cheese & House Sauces",
+    shortDescription:
+      "Fondren neighborhood smokehouse serving competition-grade brisket, pulled pork, and scratch southern sides.",
+    fullReview:
+      "Earned a full 5.0/5 stars on The Local Guide MS! Tender smoked brisket, flavorful pulled pork, creamy mac & cheese, and standout house BBQ sauces right in the heart of Fondren.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=The+Pig+and+Pint+3139+N+State+St+Jackson+MS",
+    youtubeEpisodeId: "8P_JgaugMtc",
+    povEpisode: true,
+    hours: "Mon - Sat: 11:00 AM - 9:00 PM",
+  },
+  {
+    id: "loc-moss-creek",
+    name: "Moss Creek Fish House",
+    category: "food",
+    categoryLabel: "Catfish & Southern Seafood",
+    city: "Pearl",
+    region: "Central MS",
+    address: "413 Riverwind Dr, Pearl, MS 39208",
+    lat: 32.2752,
+    lng: -90.1321,
+    rating: 5.0,
+    reviewsCount: 1640,
+    price: "$",
+    image: "https://i.ytimg.com/vi_webp/eGGlgI2LxI4/hqdefault.webp",
+    badge: "$12.50 Lunch Pick",
+    featured: true,
+    mustTry: "Crispy Fried Catfish, Fried Shrimp, Okra, Cabbage & Hushpuppies",
+    shortDescription:
+      "Beloved Pearl fish house famous for its $12.50 Tue–Fri lunch special, hot hushpuppies, and genuine Mississippi hospitality.",
+    fullReview:
+      "One of the best lunch values in Central Mississippi — crispy golden catfish, fried shrimp, mac & cheese, hushpuppies, and surprisingly addictive southern cabbage!",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Moss+Creek+Fish+House+413+Riverwind+Dr+Pearl+MS",
+    youtubeEpisodeId: "eGGlgI2LxI4",
+    povEpisode: true,
+    hours: "Tue - Sat: 11:00 AM - 8:30 PM",
+  },
+  {
+    id: "loc-chopsticks-clinton",
+    name: "ChopSticks Buffet",
+    category: "food",
+    categoryLabel: "Local Buffet Favorite",
+    city: "Clinton",
+    region: "Central MS",
+    address: "1012 Hampstead Blvd, Clinton, MS 39056",
+    lat: 32.3408,
+    lng: -90.3489,
+    rating: 4.7,
+    reviewsCount: 640,
+    price: "$$",
+    image: "https://i.ytimg.com/vi_webp/Gp4klWno0lI/hqdefault.webp",
+    badge: "Video Reviewed",
+    featured: true,
+    mustTry: "Giant Fried Fish Fillets, Crispy Egg Rolls & Fried Wontons",
+    shortDescription:
+      "Fresh, constantly replenished Chinese & southern-style buffet off I-20 in Clinton, MS.",
+    fullReview:
+      "Constantly replenished hot bar with crispy egg rolls, sweet & sour chicken, and some of the biggest flaky fried fish fillets you will see on a local buffet.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=ChopSticks+Buffet+1012+Hampstead+Blvd+Clinton+MS",
+    youtubeEpisodeId: "Gp4klWno0lI",
+    povEpisode: true,
+    hours: "Tue - Sun: 11:00 AM - 9:00 PM",
+  },
+  {
     id: "loc-mama-hamils",
     name: "Mama Hamil's Southern Cookin' and BBQ",
     category: "food",
@@ -12,16 +93,20 @@ export const locationsData = [
     rating: 5.0,
     reviewsCount: 2350,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     badge: "Damein 5★ Review",
     featured: true,
     mustTry: "Pulled Pork, Mac & Cheese, Fried Chicken Buffet",
-    shortDescription: "Legendary Madison buffet serving homestyle southern cooking, slow-smoked BBQ, fried chicken, and handmade cobbler.",
-    fullReview: "Today was my first visit to Mama Hamil’s, and I can already tell you it will not be my last! Authentic southern soul food and great service.",
-    googleMapsUrl: "https://www.google.com/maps/contrib/117260776182521505370/reviews",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Tue - Sun: 10:30 AM - 2:30 PM, 4:30 PM - 8:30 PM"
+    shortDescription:
+      "Legendary Madison buffet serving homestyle southern cooking, slow-smoked BBQ, fried chicken, and handmade cobbler.",
+    fullReview:
+      "Today was my first visit to Mama Hamil’s, and I can already tell you it will not be my last! Authentic southern soul food and great service.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Mama+Hamils+480+Magnolia+St+Madison+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Tue - Sun: 10:30 AM - 2:30 PM, 4:30 PM - 8:30 PM",
   },
   {
     id: "loc-los-parrilleros",
@@ -32,20 +117,24 @@ export const locationsData = [
     region: "Central MS",
     address: "460 Springridge Rd, Clinton, MS 39056",
     lat: 32.3276,
-    lng: -90.3340,
+    lng: -90.334,
     rating: 5.0,
     reviewsCount: 1180,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
     badge: "Damein 5★ Review",
     featured: true,
     mustTry: "Steak Fajitas, Fresh Queso & Homemade Salsa",
-    shortDescription: "Clinton favorite for sizzling skillet fajitas, huge portions, and outstanding prices.",
-    fullReview: "Los Parrilleros in Clinton was absolutely outstanding! The food was delicious, the portions were huge, and everything was very reasonably priced.",
-    googleMapsUrl: "https://www.google.com/maps/contrib/117260776182521505370/reviews",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Mon - Sun: 11:00 AM - 10:00 PM"
+    shortDescription:
+      "Clinton favorite for sizzling skillet fajitas, huge portions, and outstanding prices.",
+    fullReview:
+      "Los Parrilleros in Clinton was absolutely outstanding! The food was delicious, the portions were huge, and everything was very reasonably priced.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Los+Parrilleros+460+Springridge+Rd+Clinton+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Mon - Sun: 11:00 AM - 10:00 PM",
   },
   {
     id: "loc-1",
@@ -60,16 +149,20 @@ export const locationsData = [
     rating: 4.9,
     reviewsCount: 1420,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
     badge: "Host Favorite",
     featured: true,
     mustTry: "Classic Pimento Cheeseburger & Hand-spun Malt Shake",
-    shortDescription: "Historic 1946 Fondren soda fountain and diner. Featured in movies and legendary for Mississippi comfort food.",
-    fullReview: "Brent's Drugs isn't just nostalgia; the smash burgers have crisp lacy edges and the house-made pimento cheese melts into pure southern perfection.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Brent's+Drugs+Fondren+Jackson+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Mon - Sat: 7:00 AM - 9:00 PM"
+    shortDescription:
+      "Historic 1946 Fondren soda fountain and diner. Featured in movies and legendary for Mississippi comfort food.",
+    fullReview:
+      "Brent's Drugs isn't just nostalgia; the smash burgers have crisp lacy edges and the house-made pimento cheese melts into pure southern perfection.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Brent's+Drugs+Fondren+Jackson+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Mon - Sat: 7:00 AM - 9:00 PM",
   },
   {
     id: "loc-2",
@@ -84,16 +177,20 @@ export const locationsData = [
     rating: 4.8,
     reviewsCount: 980,
     price: "$",
-    image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80",
     badge: "Delta Legend",
     featured: true,
     mustTry: "Pulled Pork Sandwich & Spicy Delta Hot Tamales",
-    shortDescription: "Standing since 1924 at the world-famous Crossroads of Highways 61 & 49 where Robert Johnson met the blues legend.",
-    fullReview: "The sauce is tangy with a vinegar kick that cuts right through the smoked pork. Pair it with beef tamales wrapped in corn husks.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Abe's+Bar-B-Q+Clarksdale+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Daily: 10:00 AM - 8:30 PM"
+    shortDescription:
+      "Standing since 1924 at the world-famous Crossroads of Highways 61 & 49 where Robert Johnson met the blues legend.",
+    fullReview:
+      "The sauce is tangy with a vinegar kick that cuts right through the smoked pork. Pair it with beef tamales wrapped in corn husks.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Abe's+Bar-B-Q+Clarksdale+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Daily: 10:00 AM - 8:30 PM",
   },
   {
     id: "loc-3",
@@ -108,16 +205,20 @@ export const locationsData = [
     rating: 4.9,
     reviewsCount: 3200,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
     badge: "World Champion",
     featured: true,
     mustTry: "Pecan Smoked Spare Ribs & Mac Daddy Mac & Cheese",
-    shortDescription: "Built from reclaimed wood and junk, world champion barbecue pit sitting on the bayou with live blues every weekend.",
-    fullReview: "Slow pecan smoke gives these ribs a deep red smoke ring and bark that snaps with intense caramel and savory goodness.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Shed+Barbeque+Ocean+Springs+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM"
+    shortDescription:
+      "Built from reclaimed wood and junk, world champion barbecue pit sitting on the bayou with live blues every weekend.",
+    fullReview:
+      "Slow pecan smoke gives these ribs a deep red smoke ring and bark that snaps with intense caramel and savory goodness.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=The+Shed+Barbeque+Ocean+Springs+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM",
   },
   {
     id: "loc-4",
@@ -132,16 +233,20 @@ export const locationsData = [
     rating: 4.7,
     reviewsCount: 1120,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
     badge: "Cultural Staple",
     featured: false,
     mustTry: "Seafood Gumbo & Fried Catfish Po'Boy",
-    shortDescription: "The soulful pulse of downtown Jackson since 1985. Live blues, roots music, and rich Louisiana-Mississippi recipes.",
-    fullReview: "The dark roux gumbo is loaded with gulf shrimp, crab, and smoked andouille. Essential Jackson culture.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hal+and+Mals+Jackson+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
+    shortDescription:
+      "The soulful pulse of downtown Jackson since 1985. Live blues, roots music, and rich Louisiana-Mississippi recipes.",
+    fullReview:
+      "The dark roux gumbo is loaded with gulf shrimp, crab, and smoked andouille. Essential Jackson culture.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Hal+and+Mals+Jackson+MS",
+    youtubeEpisodeId: null,
     povEpisode: false,
-    hours: "Tue - Sat: 11:00 AM - Midnight"
+    hours: "Tue - Sat: 11:00 AM - Midnight",
   },
   {
     id: "loc-5",
@@ -156,16 +261,20 @@ export const locationsData = [
     rating: 4.9,
     reviewsCount: 1650,
     price: "$$$",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
     badge: "James Beard Winner",
     featured: true,
     mustTry: "Shrimp & Grits with Bacon Mushroom Gravy",
-    shortDescription: "Chef John Currence's flagship restaurant on Oxford's historic square. Benchmark of modern southern cuisine.",
-    fullReview: "The benchmark shrimp & grits in the American South. Charred scallions, savory bacon jus, and stone-ground Mississippi cheese grits.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=City+Grocery+Oxford+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Tue - Sat: 11:30 AM - 10:00 PM"
+    shortDescription:
+      "Chef John Currence's flagship restaurant on Oxford's historic square. Benchmark of modern southern cuisine.",
+    fullReview:
+      "The benchmark shrimp & grits in the American South. Charred scallions, savory bacon jus, and stone-ground Mississippi cheese grits.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=City+Grocery+Oxford+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Tue - Sat: 11:30 AM - 10:00 PM",
   },
   {
     id: "loc-6",
@@ -180,16 +289,20 @@ export const locationsData = [
     rating: 4.8,
     reviewsCount: 840,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     badge: "Historic Gem",
     featured: true,
     mustTry: "Mississippi River Sunset View & Local Craft Beer",
-    shortDescription: "Historic 200-year-old riverfront district once notorious for gamblers, boatmen, and now home to unforgettable river sunsets.",
-    fullReview: "Standing right on the banks of the mighty Mississippi River with live acoustic tunes and cool breezes off the water.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Under-The-Hill+Saloon+Natchez+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Open Daily 12:00 PM - 2:00 AM"
+    shortDescription:
+      "Historic 200-year-old riverfront district once notorious for gamblers, boatmen, and now home to unforgettable river sunsets.",
+    fullReview:
+      "Standing right on the banks of the mighty Mississippi River with live acoustic tunes and cool breezes off the water.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Under-The-Hill+Saloon+Natchez+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Open Daily 12:00 PM - 2:00 AM",
   },
   {
     id: "loc-7",
@@ -204,16 +317,20 @@ export const locationsData = [
     rating: 4.8,
     reviewsCount: 1300,
     price: "$$$",
-    image: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80",
     badge: "American Classic",
     featured: true,
-    mustTry: "3-lb Porterhouse Steak & Broiled Shrimp",
-    shortDescription: "Enter right through the kitchen in this legendary no-frills building where world-class steaks have been broiled since 1941.",
-    fullReview: "You walk past the blazing cast-iron broilers and frying stations before sitting down to some of the juiciest, most flavorful steaks in America.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Does+Eat+Place+Greenville+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: true,
-    hours: "Mon - Sat: 5:00 PM - 9:30 PM"
+    mustTry: "3-lb Porterhouse Steak & Hot Delta Tamales",
+    shortDescription:
+      "Enter right through the kitchen in this legendary no-frills building where world-class steaks have been broiled since 1941.",
+    fullReview:
+      "You walk past the blazing cast-iron broilers and frying stations before sitting down to some of the juiciest, most flavorful steaks in America.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Does+Eat+Place+Greenville+MS",
+    youtubeEpisodeId: null,
+    povEpisode: false,
+    hours: "Mon - Sat: 5:00 PM - 9:30 PM",
   },
   {
     id: "loc-8",
@@ -228,16 +345,20 @@ export const locationsData = [
     rating: 4.8,
     reviewsCount: 2800,
     price: "$$$",
-    image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
     badge: "Gulf Legend",
     featured: false,
     mustTry: "Lump Crabmeat Stuffed Flounder & Lobster Georgetown",
-    shortDescription: "Dining under 2,000-year-old live oaks in a 1737 French colonial home that has hosted presidents and celebrities.",
-    fullReview: "Rich coastal butter sauce, massive lumps of sweet blue crab, and historic brick courtyard dining.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mary+Mahoneys+Biloxi+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
+    shortDescription:
+      "Dining under 2,000-year-old live oaks in a 1737 French colonial home that has hosted presidents and celebrities.",
+    fullReview:
+      "Rich coastal butter sauce, massive lumps of sweet blue crab, and historic brick courtyard dining.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Mary+Mahoneys+Biloxi+MS",
+    youtubeEpisodeId: null,
     povEpisode: false,
-    hours: "Daily: 11:00 AM - 10:00 PM"
+    hours: "Daily: 11:00 AM - 10:00 PM",
   },
   {
     id: "loc-9",
@@ -252,16 +373,20 @@ export const locationsData = [
     rating: 4.9,
     reviewsCount: 920,
     price: "$",
-    image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80",
     badge: "Hidden Wonder",
     featured: false,
     mustTry: "Swinging Bridge Hike & Sandstone Rock Formations",
-    shortDescription: "Appalachian foothills with towering canyon rocks, clear streams, and a wooden suspension bridge over Bear Creek.",
-    fullReview: "Mississippi's best kept outdoor secret. Massive moss-covered boulders and rock canyons that feel like another world.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Tishomingo+State+Park+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
+    shortDescription:
+      "Appalachian foothills with towering canyon rocks, clear streams, and a wooden suspension bridge over Bear Creek.",
+    fullReview:
+      "Mississippi's best kept outdoor secret. Massive moss-covered boulders and rock canyons that feel like another world.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Tishomingo+State+Park+MS",
+    youtubeEpisodeId: null,
     povEpisode: false,
-    hours: "Open Daily Sunrise - Sunset"
+    hours: "Open Daily Sunrise - Sunset",
   },
   {
     id: "loc-10",
@@ -276,40 +401,20 @@ export const locationsData = [
     rating: 4.7,
     reviewsCount: 1450,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
     badge: "Family Favorite",
     featured: false,
     mustTry: "Southside Porker Pizza & The Mississippi Mudslide Sundae",
-    shortDescription: "Brick-oven NYC style pizza followed by house-churned artisanal ice creams and skyscraper sundaes.",
-    fullReview: "Crispy bottom crust, generous toppings, and an authentic ice cream parlor scoop counter.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Sal+and+Mookies+Jackson+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
+    shortDescription:
+      "Brick-oven NYC style pizza followed by house-churned artisanal ice creams and skyscraper sundaes.",
+    fullReview:
+      "Crispy bottom crust, generous toppings, and an authentic ice cream parlor scoop counter.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Sal+and+Mookies+Jackson+MS",
+    youtubeEpisodeId: null,
     povEpisode: false,
-    hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM"
-  },
-  {
-    id: "loc-11",
-    name: "Leake County Water Tower & Historic Courthouse",
-    category: "historic",
-    categoryLabel: "Historic Landmark",
-    city: "Carthage",
-    region: "Central MS",
-    address: "Courthouse Square, Carthage, MS 39051",
-    lat: 32.7412,
-    lng: -89.5342,
-    rating: 4.6,
-    reviewsCount: 310,
-    price: "$",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80",
-    badge: "Small Town Charm",
-    featured: false,
-    mustTry: "Square stroll and local bakery treats",
-    shortDescription: "Vintage southern town square with classic mid-century water tower and red brick architecture.",
-    fullReview: "Classic heart-of-Mississippi small town atmosphere with warm hospitality and preserved Main Street shops.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Carthage+Courthouse+Square+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
-    povEpisode: false,
-    hours: "Public Access"
+    hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM",
   },
   {
     id: "loc-12",
@@ -324,15 +429,19 @@ export const locationsData = [
     rating: 4.8,
     reviewsCount: 790,
     price: "$$",
-    image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
     badge: "Hub City Gem",
     featured: false,
     mustTry: "Mississippi Craft Taps & Hand-Cut Pub Fries",
-    shortDescription: "Hattiesburg's original community public house in the historic downtown arts district.",
-    fullReview: "Great rotating selection of Mississippi brewed IPAs and ales, plus friendly service and lively trivia nights.",
-    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=The+Porter+Public+House+Hattiesburg+MS",
-    youtubeEpisodeId: "dQw4w9WgXcQ",
+    shortDescription:
+      "Hattiesburg's original community public house in the historic downtown arts district.",
+    fullReview:
+      "Great rotating selection of Mississippi brewed IPAs and ales, plus friendly service and lively trivia nights.",
+    googleMapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=The+Porter+Public+House+Hattiesburg+MS",
+    youtubeEpisodeId: null,
     povEpisode: false,
-    hours: "Tue - Sat: 4:00 PM - 11:00 PM"
-  }
+    hours: "Tue - Sat: 4:00 PM - 11:00 PM",
+  },
 ];

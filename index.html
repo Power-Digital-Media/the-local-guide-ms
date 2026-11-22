@@ -2,19 +2,44 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/logo_badge_gold.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Local Guide MS | Eat Local. Support Local. Real Reviews & Food Adventures</title>
-    <meta name="description" content="Official companion website for The Local Guide MS YouTube channel (@TheLocalGuide-MS). Discover local restaurants, hidden gems, and Google Maps guides across Mississippi." />
-    
-    <!-- Google Fonts: Bebas Neue, Outfit, Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!--ANALYTICS_HEAD-->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      window.trackLocalGuideEvent = function(eventName, params) {
+        var payload = Object.assign({ page_path: window.location.pathname }, params || {});
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, payload);
+        } else {
+          window.dataLayer.push(Object.assign({ event: eventName }, payload));
+        }
+      };
+    </script>
+
+    <!--SEO_HEAD-->
+    <title>The Local Guide MS | Mississippi Food &amp; Travel Reviews</title>
+    <meta name="description" content="Join Damein &amp; Mary (@TheLocalGuide-MS) for honest, self-paid Mississippi restaurant reviews, BBQ &amp; catfish picks, interactive food maps, and road trips." />
+    <link rel="canonical" href="https://thelocalguidems.com/" />
+
+    <!-- Preload Hero LCP Banner -->
+    <link rel="preload" as="image" href="/assets/channel_banner.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- Non-Blocking Google Fonts: Bebas Neue, Outfit, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    </noscript>
   </head>
   <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-zinc-950 overflow-x-hidden min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-

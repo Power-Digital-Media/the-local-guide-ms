@@ -1,0 +1,21 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "The Local Guide MS — Mississippi Restaurant Reviews & Travel Guide",
+    "identifier": "thelocalguidems.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:thelocalguidems.com:docs:llms-txt",
+      "displayName": "The Local Guide MS Restaurant Directory, Road Trips & Video Reviews",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://thelocalguidems.com/llms.txt",
+      "description": "Independent Mississippi restaurant reviews, BBQ & seafood guides, road trip itineraries, and YouTube episodes by Damein & Mary (@TheLocalGuide-MS, 2.2M+ Google Maps photo views).",
+      "representativeQueries": [
+        "best local restaurants BBQ and catfish in Jackson Pearl Clinton and Madison Mississippi",
+        "Mississippi food road trips Delta tamales and Gulf Coast seafood guide",
+        "The Local Guide MS YouTube restaurant reviews and suggest a spot"
+      ]
+    }
+  ]
+}

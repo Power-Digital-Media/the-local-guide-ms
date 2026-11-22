@@ -1,0 +1,19 @@
+# The Local Guide MS
+
+> Eat Local. Support Local. — Official companion website for The Local Guide MS YouTube channel (@TheLocalGuide-MS) and Google Maps Local Guide profile (2.2M+ photo views), hosted by Damein & Mary in Jackson, Mississippi.
+
+The Local Guide MS explores authentic mom-and-pop restaurants, slow-smoked BBQ pits, Delta tamale stands, Gulf Coast seafood shacks, and small-town road trips across Mississippi. Every review is 100% independent — Damein and Mary pay for their own meals, film first-person POV walkthroughs on Meta Smart Glasses and 4K cameras, and share honest verdicts on flavor, portions, prices, and hospitality.
+
+## Key Highlights & Coverage
+- **Hosts**: Damein Donald (Level 7 Google Maps Local Guide, 122+ reviews, 2.2M+ photo views) & Mary
+- **Home Base**: Jackson Metro, Mississippi (covering Jackson, Fondren, Pearl, Clinton, Madison, Clarksdale, Greenville, Oxford, Natchez, Hattiesburg, Biloxi, and Ocean Springs)
+- **Featured Video Reviews**: The Pig & Pint (Fondren / Jackson, MS), Moss Creek Fish House ($12.50 lunch special in Pearl, MS), ChopSticks Buffet (Clinton, MS), Mississippi State Fair (Jackson, MS), and Memphis Pyramid Cypress Swamp road trip
+
+## Official Pages & Directories
+- [The Local Guide MS Official Hub](https://thelocalguidems.com/): Interactive Mississippi food map, latest YouTube reviews, and live Google Maps verdicts
+- [Mississippi Restaurant & Hidden Gem Directory](https://thelocalguidems.com/spots): Full curated list of reviewed BBQ joints, seafood shacks, diners, and historic stops across Mississippi
+- [Curated Mississippi Food Road Trips](https://thelocalguidems.com/road-trips): Step-by-step weekend itineraries along the Highway 61 Blues & Tamales Trail, Gulf Coast Highway 90, and Jackson Metro
+- [Suggest a Spot or Invite Us to Review](https://thelocalguidems.com/suggest-a-spot): Submit a local Mississippi restaurant, diner, or hidden gem to Damein & Mary's filming queue
+- [Watch on YouTube (@TheLocalGuide-MS)](https://www.youtube.com/@TheLocalGuide-MS): Official YouTube channel with POV restaurant reviews and Shorts
+- [Damein's Google Maps Local Guide Profile](https://www.google.com/maps/contrib/117260776182521505370/reviews): 122+ verified Google Maps restaurant reviews and 2.2M+ dish photo views
+- [Agentic Resource Discovery Manifest (ard.json)](https://thelocalguidems.com/.well-known/ard.json): Machine-readable ARD v1.0 discovery manifest

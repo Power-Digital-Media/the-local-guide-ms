@@ -18,7 +18,7 @@ import { videosData } from "../data/videos";
 import { channelConfig } from "../data/channelConfig";
 import { trackGuideEvent } from "../utils/analytics";
 
-const LazyLeafletMap = React.lazy(() => import("./LeafletMapCanvas"));
+const LazyMultiPinMap = React.lazy(() => import("./GoogleJsMapCanvas"));
 
 const categories = [
   { id: "all", label: "All Spots", icon: Layers },
@@ -41,7 +41,7 @@ const regions = [
 
 export default function InteractiveMap({
   onSelectVideo,
-  defaultViewMode = "map",
+  defaultViewMode = "google",
 }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedRegion, setSelectedRegion] = useState("All Mississippi");
@@ -54,7 +54,7 @@ export default function InteractiveMap({
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === "undefined" || viewMode !== "map") return;
+    if (typeof window === "undefined" || viewMode === "grid") return;
     if (shouldMountMap) return;
 
     const el = sectionRef.current;
@@ -94,10 +94,21 @@ export default function InteractiveMap({
     });
   }, [selectedCategory, selectedRegion, searchQuery]);
 
+  // Keep activeLocation synced when filters narrow the list
+  useEffect(() => {
+    if (
+      filteredLocations.length > 0 &&
+      !filteredLocations.some((l) => l.id === activeLocation?.id)
+    ) {
+      setActiveLocation(filteredLocations[0]);
+    }
+  }, [filteredLocations, activeLocation]);
+
   const handleSelectLocation = (loc) => {
     setActiveLocation(loc);
     setMapCenter([loc.lat, loc.lng]);
     setMapZoom(13);
+    setShouldMountMap(true);
   };
 
   const handleWatchSpotVideo = (loc) => {
@@ -116,6 +127,12 @@ export default function InteractiveMap({
     }
   };
 
+  const googleEmbedSrc = activeLocation
+    ? `https://www.google.com/maps?q=${encodeURIComponent(
+        `${activeLocation.name} ${activeLocation.address}`
+      )}&z=15&output=embed`
+    : "https://www.google.com/maps?q=Jackson,MS&z=7&output=embed";
+
   return (
     <section
       id="map-section"
@@ -127,49 +144,66 @@ export default function InteractiveMap({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
-              <span>Google Maps &amp; Travel Guide</span>
+              <MapPin
+                className="w-3.5 h-3.5 text-amber-400"
+                aria-hidden="true"
+              />
+              <span>Live Google Maps &amp; Travel Guide</span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl text-white tracking-wide uppercase">
-              Interactive Mississippi Map
+              Interactive Mississippi Google Map
             </h2>
             <p className="text-zinc-300 text-sm sm:text-base max-w-2xl mt-1">
-              Click any pin to view our honest review, what to order, real YouTube video review, and 1-click Google Maps directions.
+              Tap any Mississippi spot below to jump straight to it on Google Maps, see our must-order dish, watch the video review, and launch 1-tap directions.
             </p>
           </div>
 
-          {/* Map vs Grid Toggle */}
-          <div className="flex items-center bg-zinc-900 border border-zinc-800 rounded-xl p-1 shadow-inner self-start md:self-auto">
+          {/* Google Maps vs Statewide Pins vs Grid Toggle */}
+          <div className="flex flex-wrap items-center bg-zinc-900 border border-zinc-800 rounded-xl p-1 shadow-inner self-start md:self-auto gap-1">
+            <button
+              type="button"
+              onClick={() => {
+                setViewMode("google");
+                setShouldMountMap(true);
+              }}
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                viewMode === "google"
+                  ? "bg-amber-500 text-zinc-950 shadow-md"
+                  : "text-zinc-300 hover:text-white"
+              }`}
+            >
+              Google Maps
+            </button>
             <button
               type="button"
               onClick={() => {
                 setViewMode("map");
                 setShouldMountMap(true);
               }}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 viewMode === "map"
                   ? "bg-amber-500 text-zinc-950 shadow-md"
                   : "text-zinc-300 hover:text-white"
               }`}
             >
-              Interactive Map
+              Statewide Pins
             </button>
             <button
               type="button"
               onClick={() => setViewMode("grid")}
-              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+              className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                 viewMode === "grid"
                   ? "bg-amber-500 text-zinc-950 shadow-md"
                   : "text-zinc-300 hover:text-white"
               }`}
             >
-              Directory List ({filteredLocations.length})
+              Directory ({filteredLocations.length})
             </button>
           </div>
         </div>
 
         {/* Filters Bar */}
-        <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 mb-6 shadow-xl space-y-4">
+        <div className="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-4 mb-5 shadow-xl space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
             <div className="sm:col-span-6 md:col-span-5 relative">
               <Search
@@ -194,7 +228,11 @@ export default function InteractiveMap({
                 className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-200 focus:outline-none focus:ring-1 focus:ring-amber-500"
               >
                 {regions.map((region) => (
-                  <option key={region} value={region} className="bg-zinc-900 text-zinc-200">
+                  <option
+                    key={region}
+                    value={region}
+                    className="bg-zinc-900 text-zinc-200"
+                  >
                     {region}
                   </option>
                 ))}
@@ -203,7 +241,11 @@ export default function InteractiveMap({
 
             <div className="hidden md:block md:col-span-3 text-right">
               <span className="text-xs text-zinc-300 font-medium">
-                Showing <strong className="text-amber-400">{filteredLocations.length}</strong> spots in Mississippi
+                Showing{" "}
+                <strong className="text-amber-400">
+                  {filteredLocations.length}
+                </strong>{" "}
+                spots in Mississippi
               </span>
             </div>
           </div>
@@ -232,51 +274,116 @@ export default function InteractiveMap({
           </div>
         </div>
 
-        {/* Map + Detail View Layout */}
-        {viewMode === "map" ? (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            <div className="lg:col-span-8 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl h-[480px] sm:h-[560px] lg:h-[620px] relative">
-              {shouldMountMap ? (
-                <Suspense
-                  fallback={
-                    <div className="w-full h-full flex flex-col items-center justify-center bg-zinc-900 text-zinc-300 text-sm gap-2">
-                      <MapPin className="w-8 h-8 text-amber-400 animate-bounce" aria-hidden="true" />
-                      <span>Loading Interactive Mississippi Map...</span>
-                    </div>
-                  }
+        {/* 1-Tap Spot Quick-Picker Rail (Mobile + Desktop) */}
+        {viewMode !== "grid" && filteredLocations.length > 0 && (
+          <div
+            aria-label="Select a Mississippi spot on the map"
+            className="mb-5 flex gap-2.5 overflow-x-auto pb-2 snap-x"
+          >
+            {filteredLocations.map((loc) => {
+              const isSelected = activeLocation?.id === loc.id;
+              return (
+                <button
+                  key={loc.id}
+                  type="button"
+                  onClick={() => handleSelectLocation(loc)}
+                  className={`snap-start shrink-0 px-3.5 py-2.5 min-h-[40px] rounded-xl border text-left transition-all cursor-pointer flex items-center gap-2 ${
+                    isSelected
+                      ? "bg-amber-500 border-amber-400 text-zinc-950 shadow-lg shadow-amber-500/20 font-bold"
+                      : "bg-zinc-900 border-zinc-800 text-zinc-200 hover:border-amber-500/50 hover:text-white font-semibold"
+                  }`}
                 >
-                  <LazyLeafletMap
-                    mapCenter={mapCenter}
-                    mapZoom={mapZoom}
-                    filteredLocations={filteredLocations}
-                    activeLocation={activeLocation}
-                    onSelectLocation={setActiveLocation}
+                  <MapPin
+                    className={`w-3.5 h-3.5 shrink-0 ${
+                      isSelected ? "text-zinc-950" : "text-amber-400"
+                    }`}
+                    aria-hidden="true"
                   />
-                </Suspense>
-              ) : (
+                  <span className="text-xs whitespace-nowrap">{loc.name}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.5 rounded ${
+                      isSelected
+                        ? "bg-zinc-950/20 text-zinc-950"
+                        : "bg-zinc-950 text-zinc-300"
+                    }`}
+                  >
+                    {loc.city}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Map + Detail View Layout */}
+        {viewMode !== "grid" ? (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div className="lg:col-span-8 bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl h-[440px] sm:h-[540px] lg:h-[620px] relative">
+              {!shouldMountMap ? (
                 <div className="w-full h-full flex flex-col items-center justify-center bg-zinc-900 p-6 text-center space-y-3">
-                  <MapPin className="w-10 h-10 text-amber-400" aria-hidden="true" />
+                  <MapPin
+                    className="w-10 h-10 text-amber-400"
+                    aria-hidden="true"
+                  />
                   <div className="font-heading font-bold text-lg text-white">
-                    {filteredLocations.length} Curated Mississippi Food &amp; Travel Pins
+                    {activeLocation
+                      ? `${activeLocation.name} · ${activeLocation.city}, MS`
+                      : `${filteredLocations.length} Curated Mississippi Food & Travel Pins`}
                   </div>
                   <button
                     type="button"
                     onClick={() => setShouldMountMap(true)}
                     className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs cursor-pointer"
                   >
-                    Load Interactive Map
+                    Load Live Google Map
                   </button>
                 </div>
-              )}
+              ) : viewMode === "google" ? (
+                <iframe
+                  key={activeLocation?.id || "default-ms-map"}
+                  src={googleEmbedSrc}
+                  title={
+                    activeLocation
+                      ? `Google Map of ${activeLocation.name} in ${activeLocation.city}, Mississippi`
+                      : "Google Map of Mississippi Local Guide Spots"
+                  }
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                />
+              ) : (
+                <>
+                  <Suspense
+                    fallback={
+                      <div className="w-full h-full flex flex-col items-center justify-center bg-zinc-900 text-zinc-300 text-sm gap-2">
+                        <MapPin
+                          className="w-8 h-8 text-amber-400 animate-bounce"
+                          aria-hidden="true"
+                        />
+                        <span>Loading Statewide Mississippi Map...</span>
+                      </div>
+                    }
+                  >
+                    <LazyMultiPinMap
+                      mapCenter={mapCenter}
+                      mapZoom={mapZoom}
+                      filteredLocations={filteredLocations}
+                      activeLocation={activeLocation}
+                      onSelectLocation={setActiveLocation}
+                    />
+                  </Suspense>
 
-              <div className="absolute bottom-4 left-4 z-[400] bg-zinc-950/90 backdrop-blur-md border border-zinc-800 px-3 py-2 rounded-xl text-[11px] text-zinc-200 shadow-xl hidden sm:flex items-center gap-3">
-                <span className="font-bold text-amber-400">Legend:</span>
-                <span>🍽️ Food</span>
-                <span>☕ Sweets</span>
-                <span>🌲 Outdoors</span>
-                <span>🏛️ Historic</span>
-                <span>🎷 Blues</span>
-              </div>
+                  <div className="absolute bottom-4 left-4 z-[400] bg-zinc-950/90 backdrop-blur-md border border-zinc-800 px-3 py-2 rounded-xl text-[11px] text-zinc-200 shadow-xl hidden sm:flex items-center gap-3">
+                    <span className="font-bold text-amber-400">Legend:</span>
+                    <span>🍽️ Food</span>
+                    <span>☕ Sweets</span>
+                    <span>🌲 Outdoors</span>
+                    <span>🏛️ Historic</span>
+                    <span>🎷 Blues</span>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Selected Location Card */}
@@ -312,24 +419,35 @@ export default function InteractiveMap({
                       <span className="font-semibold text-amber-400 uppercase tracking-wider text-[11px]">
                         {activeLocation.categoryLabel}
                       </span>
-                      <span className="text-zinc-300 font-semibold">{activeLocation.price}</span>
+                      <span className="text-zinc-300 font-semibold">
+                        {activeLocation.price}
+                      </span>
                     </div>
                     <h3 className="font-heading font-bold text-xl sm:text-2xl text-white">
                       {activeLocation.name}
                     </h3>
                     <p className="text-xs text-zinc-300 flex items-center gap-1 mt-1">
-                      <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" aria-hidden="true" />
+                      <MapPin
+                        className="w-3.5 h-3.5 text-amber-400 shrink-0"
+                        aria-hidden="true"
+                      />
                       <span>{activeLocation.address}</span>
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 p-3 bg-zinc-950/80 rounded-xl border border-zinc-800/80">
                     <div className="flex items-center gap-1 text-amber-400 font-bold text-base">
-                      <Star className="w-4 h-4 fill-amber-400" aria-hidden="true" />
+                      <Star
+                        className="w-4 h-4 fill-amber-400"
+                        aria-hidden="true"
+                      />
                       <span>{activeLocation.rating}</span>
                     </div>
                     <div className="text-xs text-zinc-300">
-                      <span>{activeLocation.reviewsCount.toLocaleString("en-US")} Google Reviews</span>
+                      <span>
+                        {activeLocation.reviewsCount.toLocaleString("en-US")}{" "}
+                        Google Reviews
+                      </span>
                       <span className="block text-[10px] text-emerald-400 font-semibold">
                         Verified Local Guide Pick
                       </span>
@@ -373,7 +491,10 @@ export default function InteractiveMap({
                         onClick={() => handleWatchSpotVideo(activeLocation)}
                         className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold bg-red-700 hover:bg-red-600 text-white transition-all cursor-pointer"
                       >
-                        <Play className="w-3.5 h-3.5 fill-white" aria-hidden="true" />
+                        <Play
+                          className="w-3.5 h-3.5 fill-white"
+                          aria-hidden="true"
+                        />
                         <span>Watch Video Review</span>
                       </button>
                     ) : (
@@ -383,7 +504,10 @@ export default function InteractiveMap({
                         rel="noopener noreferrer"
                         className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700 transition-all"
                       >
-                        <Play className="w-3.5 h-3.5 text-red-400 fill-red-400" aria-hidden="true" />
+                        <Play
+                          className="w-3.5 h-3.5 text-red-400 fill-red-400"
+                          aria-hidden="true"
+                        />
                         <span>Follow @TheLocalGuide-MS on YouTube</span>
                       </a>
                     )}
@@ -416,7 +540,10 @@ export default function InteractiveMap({
                     </span>
                   </div>
                   <div className="absolute bottom-2 right-2 bg-zinc-950/85 backdrop-blur-md px-2 py-0.5 rounded text-[11px] font-bold text-amber-300 flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-amber-400 text-amber-400" aria-hidden="true" />
+                    <Star
+                      className="w-3 h-3 fill-amber-400 text-amber-400"
+                      aria-hidden="true"
+                    />
                     <span>{loc.rating}</span>
                   </div>
                 </div>
@@ -439,8 +566,12 @@ export default function InteractiveMap({
                   </div>
 
                   <div className="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800 space-y-1 text-xs">
-                    <span className="text-[10px] font-bold text-amber-300 uppercase">Must Order:</span>
-                    <p className="text-zinc-100 font-medium truncate">{loc.mustTry}</p>
+                    <span className="text-[10px] font-bold text-amber-300 uppercase">
+                      Must Order:
+                    </span>
+                    <p className="text-zinc-100 font-medium truncate">
+                      {loc.mustTry}
+                    </p>
                   </div>
 
                   <div className="pt-2 flex items-center gap-2 border-t border-zinc-800/80">
@@ -471,13 +602,12 @@ export default function InteractiveMap({
                       <button
                         type="button"
                         onClick={() => {
-                          setViewMode("map");
-                          setShouldMountMap(true);
+                          setViewMode("google");
                           handleSelectLocation(loc);
                         }}
                         className="px-3 py-2 rounded-lg text-xs font-semibold bg-amber-500/15 border border-amber-500/30 hover:bg-amber-500 hover:text-zinc-950 text-amber-300 transition-colors cursor-pointer"
                       >
-                        Pin on Map
+                        Show on Google Map
                       </button>
                     )}
                   </div>

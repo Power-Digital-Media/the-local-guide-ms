@@ -18,7 +18,7 @@
 /* Accessibility Skip Link */
 .skip-link {
   position: fixed;
-  top: -100px;
+  top: 1rem;
   left: 1rem;
   z-index: 9999;
   padding: 0.75rem 1.25rem;
@@ -28,11 +28,16 @@
   font-size: 0.875rem;
   border-radius: 0.75rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: top 0.15s ease;
+  transform: translateY(-250%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .skip-link:focus {
-  top: 1rem;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
   outline: 2px solid #ffffff;
   outline-offset: 2px;
 }

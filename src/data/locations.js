@@ -21,7 +21,7 @@ export const locationsData = [
     fullReview:
       "Earned a full 5.0/5 stars on The Local Guide MS! Tender smoked brisket, flavorful pulled pork, creamy mac & cheese, and standout house BBQ sauces right in the heart of Fondren.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=The+Pig+and+Pint+3139+N+State+St+Jackson+MS",
+      "https://www.google.com/maps/place/The+Pig+and+Pint+3139+N+State+St+Jackson+MS+39216",
     youtubeEpisodeId: "8P_JgaugMtc",
     povEpisode: true,
     hours: "Mon - Sat: 11:00 AM - 9:00 PM",
@@ -48,7 +48,7 @@ export const locationsData = [
     fullReview:
       "One of the best lunch values in Central Mississippi — crispy golden catfish, fried shrimp, mac & cheese, hushpuppies, and surprisingly addictive southern cabbage!",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Moss+Creek+Fish+House+413+Riverwind+Dr+Pearl+MS",
+      "https://www.google.com/maps/place/Moss+Creek+Fish+House+413+Riverwind+Dr+Pearl+MS+39208",
     youtubeEpisodeId: "eGGlgI2LxI4",
     povEpisode: true,
     hours: "Tue - Sat: 11:00 AM - 8:30 PM",
@@ -75,7 +75,7 @@ export const locationsData = [
     fullReview:
       "Constantly replenished hot bar with crispy egg rolls, sweet & sour chicken, and some of the biggest flaky fried fish fillets you will see on a local buffet.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=ChopSticks+Buffet+1012+Hampstead+Blvd+Clinton+MS",
+      "https://www.google.com/maps/place/ChopSticks+Buffet+1012+Hampstead+Blvd+Clinton+MS+39056",
     youtubeEpisodeId: "Gp4klWno0lI",
     povEpisode: true,
     hours: "Tue - Sun: 11:00 AM - 9:00 PM",
@@ -103,7 +103,7 @@ export const locationsData = [
     fullReview:
       "Today was my first visit to Mama Hamil’s, and I can already tell you it will not be my last! Authentic southern soul food and great service.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Mama+Hamils+480+Magnolia+St+Madison+MS",
+      "https://www.google.com/maps/place/Mama+Hamils+480+Magnolia+St+Madison+MS+39110",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Tue - Sun: 10:30 AM - 2:30 PM, 4:30 PM - 8:30 PM",
@@ -131,7 +131,7 @@ export const locationsData = [
     fullReview:
       "Los Parrilleros in Clinton was absolutely outstanding! The food was delicious, the portions were huge, and everything was very reasonably priced.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Los+Parrilleros+460+Springridge+Rd+Clinton+MS",
+      "https://www.google.com/maps/place/Los+Parrilleros+460+Springridge+Rd+Clinton+MS+39056",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Mon - Sun: 11:00 AM - 10:00 PM",
@@ -159,7 +159,7 @@ export const locationsData = [
     fullReview:
       "Brent's Drugs isn't just nostalgia; the smash burgers have crisp lacy edges and the house-made pimento cheese melts into pure southern perfection.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Brent's+Drugs+Fondren+Jackson+MS",
+      "https://www.google.com/maps/place/Brents+Drugs+655+Duling+Ave+Jackson+MS+39216",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Mon - Sat: 7:00 AM - 9:00 PM",
@@ -187,7 +187,7 @@ export const locationsData = [
     fullReview:
       "The sauce is tangy with a vinegar kick that cuts right through the smoked pork. Pair it with beef tamales wrapped in corn husks.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Abe's+Bar-B-Q+Clarksdale+MS",
+      "https://www.google.com/maps/place/Abes+Bar-B-Q+616+State+St+Clarksdale+MS+38614",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Daily: 10:00 AM - 8:30 PM",
@@ -215,7 +215,7 @@ export const locationsData = [
     fullReview:
       "Slow pecan smoke gives these ribs a deep red smoke ring and bark that snaps with intense caramel and savory goodness.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=The+Shed+Barbeque+Ocean+Springs+MS",
+      "https://www.google.com/maps/place/The+Shed+Barbeque+7501+MS-57+Ocean+Springs+MS+39564",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM",
@@ -243,7 +243,7 @@ export const locationsData = [
     fullReview:
       "The dark roux gumbo is loaded with gulf shrimp, crab, and smoked andouille. Essential Jackson culture.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Hal+and+Mals+Jackson+MS",
+      "https://www.google.com/maps/place/Hal+and+Mals+200+S+Commerce+St+Jackson+MS+39201",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Tue - Sat: 11:00 AM - Midnight",
@@ -271,7 +271,7 @@ export const locationsData = [
     fullReview:
       "The benchmark shrimp & grits in the American South. Charred scallions, savory bacon jus, and stone-ground Mississippi cheese grits.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=City+Grocery+Oxford+MS",
+      "https://www.google.com/maps/place/City+Grocery+152+Courthouse+Square+Oxford+MS+38655",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Tue - Sat: 11:30 AM - 10:00 PM",
@@ -299,7 +299,7 @@ export const locationsData = [
     fullReview:
       "Standing right on the banks of the mighty Mississippi River with live acoustic tunes and cool breezes off the water.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Under-The-Hill+Saloon+Natchez+MS",
+      "https://www.google.com/maps/place/Under-The-Hill+Saloon+33+Silver+St+Natchez+MS+39120",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Open Daily 12:00 PM - 2:00 AM",
@@ -327,7 +327,7 @@ export const locationsData = [
     fullReview:
       "You walk past the blazing cast-iron broilers and frying stations before sitting down to some of the juiciest, most flavorful steaks in America.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Does+Eat+Place+Greenville+MS",
+      "https://www.google.com/maps/place/Does+Eat+Place+502+Nelson+St+Greenville+MS+38701",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Mon - Sat: 5:00 PM - 9:30 PM",
@@ -355,7 +355,7 @@ export const locationsData = [
     fullReview:
       "Rich coastal butter sauce, massive lumps of sweet blue crab, and historic brick courtyard dining.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Mary+Mahoneys+Biloxi+MS",
+      "https://www.google.com/maps/place/Mary+Mahoneys+110+Rue+Magnolia+Biloxi+MS+39530",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Daily: 11:00 AM - 10:00 PM",
@@ -383,7 +383,7 @@ export const locationsData = [
     fullReview:
       "Mississippi's best kept outdoor secret. Massive moss-covered boulders and rock canyons that feel like another world.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Tishomingo+State+Park+MS",
+      "https://www.google.com/maps/place/Tishomingo+State+Park+105+County+Road+90+Tishomingo+MS+38873",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Open Daily Sunrise - Sunset",
@@ -411,7 +411,7 @@ export const locationsData = [
     fullReview:
       "Crispy bottom crust, generous toppings, and an authentic ice cream parlor scoop counter.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Sal+and+Mookies+Jackson+MS",
+      "https://www.google.com/maps/place/Sal+and+Mookies+200+District+Blvd+Jackson+MS+39211",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Sun - Thu: 11:00 AM - 9:00 PM | Fri - Sat: 11:00 AM - 10:00 PM",
@@ -439,7 +439,7 @@ export const locationsData = [
     fullReview:
       "Great rotating selection of Mississippi brewed IPAs and ales, plus friendly service and lively trivia nights.",
     googleMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=The+Porter+Public+House+Hattiesburg+MS",
+      "https://www.google.com/maps/place/The+Porter+Public+House+201+W+Pine+St+Hattiesburg+MS+39401",
     youtubeEpisodeId: null,
     povEpisode: false,
     hours: "Tue - Sat: 4:00 PM - 11:00 PM",

@@ -125,10 +125,12 @@ export default function RoadTrips({ showAllExpanded = false }) {
 
                   <div className="pt-2">
                     <a
-                      href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(
-                        itin.stops[0].name
-                      )}&destination=${encodeURIComponent(
-                        itin.stops[itin.stops.length - 1].name
+                      href={`https://www.google.com/maps/dir/${encodeURIComponent(
+                        `${itin.stops[0].name} ${itin.stops[0].city} MS`
+                      )}/${encodeURIComponent(
+                        `${itin.stops[itin.stops.length - 1].name} ${
+                          itin.stops[itin.stops.length - 1].city
+                        } MS`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"

@@ -205,7 +205,7 @@ export default function Footer({ onOpenSuggestModal }) {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-300">
           <p className="flex flex-wrap items-center gap-1.5">
             <span>
-              © {new Date().getFullYear()} The Local Guide MS. All rights reserved.
+              © 2026 The Local Guide MS. All rights reserved.
             </span>
             <span aria-hidden="true">•</span>
             <span className="text-zinc-300">

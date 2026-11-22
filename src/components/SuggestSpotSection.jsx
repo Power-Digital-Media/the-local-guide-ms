@@ -108,10 +108,8 @@ export function SpotSuggestionForm({ formSource = "on_page_suggest_section", onD
 
   return (
     <form
-      name="suggest-spot"
       method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
+      action="/suggest-a-spot"
       onFocus={handleFocusIn}
       onSubmit={handleSubmit}
       className="space-y-4 text-xs"
@@ -122,11 +120,7 @@ export function SpotSuggestionForm({ formSource = "on_page_suggest_section", onD
         name="subject"
         value="The Local Guide MS — New Spot Suggestion"
       />
-      <p className="hidden">
-        <label>
-          Don&apos;t fill this out: <input name="bot-field" />
-        </label>
-      </p>
+      <input type="hidden" name="bot-field" value="" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>

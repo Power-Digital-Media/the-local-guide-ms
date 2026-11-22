@@ -29,6 +29,16 @@ const baseOrgGraph = [
       { "@type": "Person", name: "Damein Donald" },
       { "@type": "Person", name: "Mary Donald" },
     ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "editorial & spot suggestions",
+        email: "damein@powerdigitalmedia.org",
+        url: "https://thelocalguidems.com/suggest-a-spot",
+        areaServed: "US-MS",
+        availableLanguage: ["English"],
+      },
+    ],
     sameAs: [
       "https://www.youtube.com/@TheLocalGuide-MS",
       "https://www.google.com/maps/contrib/117260776182521505370/reviews",
@@ -71,6 +81,7 @@ const routes = [
         description: v.description,
         thumbnailUrl: [`https://i.ytimg.com/vi/${v.youtubeId}/hqdefault.jpg`],
         uploadDate: `${v.publishedAt}T12:00:00Z`,
+        duration: "PT1M",
         embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
         contentUrl: v.watchUrl,
       })),

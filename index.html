@@ -39,6 +39,21 @@
     </noscript>
   </head>
   <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-zinc-950 overflow-x-hidden min-h-screen">
+    <!-- Hidden Netlify Forms static registration blueprint (kept outside #root so Netlify CDN never mutates React SSR DOM) -->
+    <form name="suggest-spot" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="suggest-spot" />
+      <input type="hidden" name="subject" />
+      <input name="bot-field" />
+      <input name="submissionType" />
+      <input name="category" />
+      <input name="spotName" />
+      <input name="city" />
+      <input name="mustTryDish" />
+      <textarea name="notes"></textarea>
+      <input name="submitterName" />
+      <input name="submitterEmail" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

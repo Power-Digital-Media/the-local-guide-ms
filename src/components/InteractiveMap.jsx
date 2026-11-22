@@ -70,7 +70,7 @@ export default function InteractiveMap({
           observer.disconnect();
         }
       },
-      { rootMargin: "300px 0px" }
+      { rootMargin: "0px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -329,7 +329,7 @@ export default function InteractiveMap({
                       <span>{activeLocation.rating}</span>
                     </div>
                     <div className="text-xs text-zinc-300">
-                      <span>{activeLocation.reviewsCount.toLocaleString()} Google Reviews</span>
+                      <span>{activeLocation.reviewsCount.toLocaleString("en-US")} Google Reviews</span>
                       <span className="block text-[10px] text-emerald-400 font-semibold">
                         Verified Local Guide Pick
                       </span>

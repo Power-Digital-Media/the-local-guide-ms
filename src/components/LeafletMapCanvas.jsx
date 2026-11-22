@@ -91,6 +91,7 @@ export default function LeafletMapCanvas({
   onSelectLocation,
 }) {
   const [currentZoom, setCurrentZoom] = useState(mapZoom || 7.4);
+  const [basemapStyle, setBasemapStyle] = useState("streets");
 
   // At statewide zoom (< 10), keep >= ~25 miles between displayed pins so interactive buttons never overlap
   const visibleMarkers = useMemo(() => {
@@ -118,73 +119,128 @@ export default function LeafletMapCanvas({
   }, [filteredLocations, activeLocation, currentZoom]);
 
   return (
-    <MapContainer
-      center={mapCenter}
-      zoom={mapZoom}
-      scrollWheelZoom={false}
-      className="w-full h-full"
-    >
-      <MapController
+    <div className="relative w-full h-full">
+      {/* Road Map / Satellite Switcher */}
+      <div
+        role="group"
+        aria-label="Map style"
+        className="absolute top-3 right-3 z-[450] inline-flex rounded-xl bg-zinc-950/90 backdrop-blur-md border border-zinc-700 p-1 shadow-xl"
+      >
+        <button
+          type="button"
+          aria-pressed={basemapStyle === "streets"}
+          onClick={() => setBasemapStyle("streets")}
+          className={`px-3 py-1.5 min-h-[32px] rounded-lg text-[11px] font-bold transition-colors cursor-pointer ${
+            basemapStyle === "streets"
+              ? "bg-amber-500 text-zinc-950 shadow"
+              : "text-zinc-200 hover:text-white"
+          }`}
+        >
+          Road Map
+        </button>
+        <button
+          type="button"
+          aria-pressed={basemapStyle === "satellite"}
+          onClick={() => setBasemapStyle("satellite")}
+          className={`px-3 py-1.5 min-h-[32px] rounded-lg text-[11px] font-bold transition-colors cursor-pointer ${
+            basemapStyle === "satellite"
+              ? "bg-amber-500 text-zinc-950 shadow"
+              : "text-zinc-200 hover:text-white"
+          }`}
+        >
+          Satellite
+        </button>
+      </div>
+
+      <MapContainer
         center={mapCenter}
         zoom={mapZoom}
-        onZoomChange={setCurrentZoom}
-      />
-      <TileLayer
-        attribution='&copy; <a href="https://carto.com/">CARTO</a>, &copy; <a href="https://openstreetmap.org">OSM</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-      />
-      {visibleMarkers.map((loc) => {
-        const label = `${loc.name} — ${loc.city}, Mississippi`;
-        return (
-          <Marker
-            key={loc.id}
-            position={[loc.lat, loc.lng]}
-            title={label}
-            alt={label}
-            icon={createCustomPin(
-              loc.category,
-              activeLocation?.id === loc.id,
-              label
-            )}
-            eventHandlers={{
-              add: (e) => {
-                const el = e.target.getElement();
-                if (el) {
-                  el.setAttribute("aria-label", label);
-                }
-              },
-              click: () => onSelectLocation(loc),
-            }}
-          >
-            <Popup>
-              <div className="p-3 max-w-xs space-y-2">
-                <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  {loc.categoryLabel}
+        scrollWheelZoom={false}
+        className="w-full h-full"
+      >
+        <MapController
+          center={mapCenter}
+          zoom={mapZoom}
+          onZoomChange={setCurrentZoom}
+        />
+
+        {basemapStyle === "satellite" ? (
+          <>
+            <TileLayer
+              key="esri-satellite"
+              attribution="Tiles &copy; Esri"
+              url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+              maxZoom={19}
+            />
+            <TileLayer
+              key="esri-labels"
+              attribution=""
+              url="https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}"
+              maxZoom={19}
+            />
+          </>
+        ) : (
+          <TileLayer
+            key="esri-streets"
+            attribution="Tiles &copy; Esri &mdash; OpenStreetMap, USGS"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={19}
+          />
+        )}
+
+        {visibleMarkers.map((loc) => {
+          const label = `${loc.name} — ${loc.city}, Mississippi`;
+          return (
+            <Marker
+              key={loc.id}
+              position={[loc.lat, loc.lng]}
+              title={label}
+              alt={label}
+              icon={createCustomPin(
+                loc.category,
+                activeLocation?.id === loc.id,
+                label
+              )}
+              eventHandlers={{
+                add: (e) => {
+                  const el = e.target.getElement();
+                  if (el) {
+                    el.setAttribute("aria-label", label);
+                  }
+                },
+                click: () => onSelectLocation(loc),
+              }}
+            >
+              <Popup>
+                <div className="p-3 max-w-xs space-y-2">
+                  <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">
+                    {loc.categoryLabel}
+                  </div>
+                  <div className="font-heading font-bold text-sm text-zinc-100">
+                    {loc.name}
+                  </div>
+                  <p className="text-xs text-zinc-300 line-clamp-2">
+                    {loc.shortDescription}
+                  </p>
+                  <div className="pt-2 border-t border-zinc-700 flex items-center justify-between">
+                    <span className="text-xs font-semibold text-amber-300">
+                      ★ {loc.rating} ({loc.city})
+                    </span>
+                    <a
+                      href={loc.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-sky-400 hover:underline flex items-center gap-1"
+                    >
+                      Open Maps <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
                 </div>
-                <div className="font-heading font-bold text-sm text-zinc-100">
-                  {loc.name}
-                </div>
-                <p className="text-xs text-zinc-300 line-clamp-2">
-                  {loc.shortDescription}
-                </p>
-                <div className="pt-2 border-t border-zinc-700 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-amber-300">
-                    ★ {loc.rating} ({loc.city})
-                  </span>
-                  <a
-                    href={loc.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold text-sky-400 hover:underline flex items-center gap-1"
-                  >
-                    Open Maps <ExternalLink className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
-            </Popup>
-          </Marker>
-        );
-      })}
-    </MapContainer>
+              </Popup>
+            </Marker>
+          );
+        })}
+      </MapContainer>
+    </div>
   );
 }

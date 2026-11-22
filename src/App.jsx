@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import InteractiveMap from "./components/InteractiveMap";
@@ -11,8 +11,9 @@ import GuidesShowcaseSection from "./components/GuidesShowcaseSection";
 import SpotReviewPage from "./components/SpotReviewPage";
 import GuideArticlePage from "./components/GuideArticlePage";
 import SuggestSpotSection from "./components/SuggestSpotSection";
-import SuggestSpotModal from "./components/SuggestSpotModal";
 import Footer from "./components/Footer";
+
+const SuggestSpotModal = React.lazy(() => import("./components/SuggestSpotModal"));
 import { locationsData } from "./data/locations";
 import { guidesData } from "./data/guides";
 
@@ -156,10 +157,14 @@ export default function App({ routePath }) {
 
       <Footer onOpenSuggestModal={() => setSuggestModalOpen(true)} />
 
-      <SuggestSpotModal
-        isOpen={suggestModalOpen}
-        onClose={() => setSuggestModalOpen(false)}
-      />
+      {suggestModalOpen && (
+        <Suspense fallback={null}>
+          <SuggestSpotModal
+            isOpen={suggestModalOpen}
+            onClose={() => setSuggestModalOpen(false)}
+          />
+        </Suspense>
+      )}
     </div>
   );
 }

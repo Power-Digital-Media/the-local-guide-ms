@@ -145,6 +145,8 @@ export default function Hero() {
                     alt="The Local Guide MS Badge"
                     width="256"
                     height="256"
+                    loading="lazy"
+                    decoding="async"
                     className="w-56 h-56 sm:w-64 sm:h-64 object-contain rounded-full shadow-2xl border-4 border-zinc-800 group-hover:scale-[1.03] transition-transform duration-500"
                   />
                   <div className="absolute -bottom-2 right-2 bg-zinc-950 border border-amber-500/50 rounded-xl px-3 py-1.5 shadow-lg flex items-center gap-1.5">

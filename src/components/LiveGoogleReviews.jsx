@@ -23,7 +23,7 @@ export default function LiveGoogleReviews() {
               Damein&apos;s Real Google Reviews &amp; Photos
             </h2>
             <p className="text-zinc-300 text-sm sm:text-base max-w-2xl mt-1">
-              Direct from Damein&apos;s Level 7 Local Guide profile (122+ reviews, 2.2M+ views) — 100% real visits, real dish photos, 5-star gems, and unfiltered 1-star misses.
+              Direct from Damein&apos;s Level 7 Local Guide profile (131+ reviews, 3M+ views) — 100% real visits, real dish photos, 5-star gems, and unfiltered 1-star misses.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ export default function LiveGoogleReviews() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-900/30 transition-all shrink-0"
           >
-            <span>View All 122+ Reviews on Google Maps</span>
+            <span>View All 131+ Reviews on Google Maps</span>
             <ExternalLink className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>

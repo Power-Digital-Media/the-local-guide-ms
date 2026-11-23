@@ -30,7 +30,7 @@ export default function AboutHost() {
             </p>
 
             <p className="text-sm text-zinc-300 leading-relaxed">
-              With over <strong className="text-sky-300 font-semibold">2.2 Million+ photo views</strong> on Google Maps, Damein brings years of verified local guide exploration, while Mary joins the journey across Mississippi tasting every dish, testing every lunch special, and bringing you along for authentic southern road trips.
+              With over <strong className="text-sky-300 font-semibold">3 Million+ photo views</strong> on Google Maps, Damein brings years of verified local guide exploration, while Mary joins the journey across Mississippi tasting every dish, testing every lunch special, and bringing you along for authentic southern road trips.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -135,7 +135,7 @@ export default function AboutHost() {
                     POV Filming
                   </span>
                   <span aria-hidden="true">•</span>
-                  <span className="text-sky-300 font-bold">2.2M+ Map Views</span>
+                  <span className="text-sky-300 font-bold">3M+ Map Views</span>
                 </div>
               </div>
             </div>

@@ -74,7 +74,7 @@ export default function GuideArticlePage({ guide }) {
                   <span>By Damein Donald &amp; Mary (The Local Guide MS)</span>
                   <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 uppercase">
                     <Award className="w-3 h-3" aria-hidden="true" />
-                    Level 7 Local Guide • 2.2M+ Map Views
+                    Level 7 Local Guide • 3M+ Map Views
                   </span>
                 </div>
                 <p className="text-xs text-zinc-300">

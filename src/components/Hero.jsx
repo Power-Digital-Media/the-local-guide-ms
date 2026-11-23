@@ -212,7 +212,7 @@ export default function Hero() {
                 <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-amber-300">
                   <span>Level 7 Google Local Guide</span>
                   <span aria-hidden="true">•</span>
-                  <span>2.2M+ Views</span>
+                  <span>3M+ Views</span>
                   <span aria-hidden="true">•</span>
                   <span>Damein &amp; Mary</span>
                 </div>

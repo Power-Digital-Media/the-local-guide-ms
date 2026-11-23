@@ -30,10 +30,10 @@ export const channelConfig = {
     badgeLevel: "Level 7 Google Local Guide",
   },
   stats: {
-    photoViews: "2.2M+",
+    photoViews: "3M+",
     photoViewsLabel: "Google Maps Views",
     citiesCovered: "28+",
-    spotsReviewed: "122+",
+    spotsReviewed: "131+",
     localMiles: "3,400+",
     honestReviews: "100%",
   },

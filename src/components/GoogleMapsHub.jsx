@@ -36,7 +36,7 @@ export default function GoogleMapsHub() {
               </h2>
 
               <p className="text-sm sm:text-base text-zinc-200 leading-relaxed">
-                Explore 122+ real reviews, unfiltered food ratings, high-res dish photos, and verified location pins directly on Google Maps. Follow our official contributor profile to get notified whenever a new Mississippi spot is reviewed.
+                Explore 131+ real reviews, unfiltered food ratings, high-res dish photos, and verified location pins directly on Google Maps. Follow our official contributor profile to get notified whenever a new Mississippi spot is reviewed.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
@@ -44,7 +44,7 @@ export default function GoogleMapsHub() {
                   <div className="flex items-center gap-2 text-sky-300">
                     <Eye className="w-5 h-5 text-sky-300" aria-hidden="true" />
                     <span className="font-bold text-sm text-zinc-100">
-                      2.2M+ Views
+                      3M+ Views
                     </span>
                   </div>
                   <p className="text-xs text-zinc-300">Google Maps Photo Views</p>
@@ -57,7 +57,7 @@ export default function GoogleMapsHub() {
                       Level 7 Guide
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-300">122+ Verified Reviews</p>
+                  <p className="text-xs text-zinc-300">131+ Verified Reviews</p>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800/80 space-y-1">

@@ -665,7 +665,7 @@ export default function SpotReviewPage({ spot }) {
                   <span>Reviewed by Damein Donald &amp; Mary</span>
                   <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-[10px] text-sky-300 uppercase">
                     <Award className="w-3 h-3" aria-hidden="true" />
-                    Level 7 Local Guide • 2.2M+ Views
+                    Level 7 Local Guide • 3M+ Views
                   </span>
                 </div>
                 <p className="text-xs text-zinc-300 mt-0.5">
@@ -688,7 +688,7 @@ export default function SpotReviewPage({ spot }) {
               rel="noopener noreferrer"
               className="text-xs font-bold text-sky-300 hover:text-sky-200 inline-flex items-center gap-1.5 hover:underline shrink-0"
             >
-              <span>See All 122+ Google Maps Reviews</span>
+              <span>See All 131+ Google Maps Reviews</span>
               <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
           </div>

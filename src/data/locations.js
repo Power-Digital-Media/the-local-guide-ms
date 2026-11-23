@@ -190,15 +190,23 @@ export const locationsData = [
     "photos": [
       {
         "src": "/assets/reviews/moss-creek-fish-house-pearl-ms/catfish-spread.webp",
-        "alt": ".50 weekday lunch special platters at Moss Creek Fish House in Pearl: crispy fried catfish, loaded baked potato, hushpuppies, green beans, and mac & cheese"
+        "alt": ".50 weekday lunch special platters at Moss Creek Fish House in Pearl: crispy fried catfish, loaded baked potato, hushpuppies, fried okra, green beans, and mac & cheese"
       },
       {
         "src": "/assets/reviews/moss-creek-fish-house-pearl-ms/hushpuppies-catfish.webp",
         "alt": "Close-up of sweet crispy hushpuppies, golden fried catfish fillets, and loaded potato at Moss Creek Fish House"
       },
       {
+        "src": "/assets/reviews/moss-creek-fish-house-pearl-ms/shrimp-mac-platter.webp",
+        "alt": "Crispy fried shrimp platter with green beans, mac & cheese, and hushpuppies at Moss Creek Fish House"
+      },
+      {
         "src": "/assets/reviews/moss-creek-fish-house-pearl-ms/southern-cabbage.webp",
         "alt": "Complimentary bowl of seasoned Southern boiled cabbage brought out by our server Sam at Moss Creek Fish House"
+      },
+      {
+        "src": "/assets/reviews/moss-creek-fish-house-pearl-ms/entrance-pearl-ms.webp",
+        "alt": "Front entrance and hours sign at Moss Creek Fish House in Pearl, Mississippi"
       }
     ],
     "badge": ".50 Lunch + Food Photos",
@@ -822,7 +830,7 @@ export const locationsData = [
     "categoryLabel": "Video Menu vs. Reality",
     "city": "Clinton",
     "region": "Central MS",
-    "address": "940 Hampstead Blvd, Clinton, MS 39056",
+    "address": "111 Clinton Center Dr, Clinton, MS 39056",
     "phone": "(601) 925-9515",
     "lat": 32.3402,
     "lng": -90.3468,
@@ -1219,9 +1227,42 @@ export const locationsData = [
     "rating": 4.9,
     "reviewsCount": 24500,
     "price": "$",
-    "image": "https://i.ytimg.com/vi_webp/tv0peH1ghtI/hqdefault.webp",
-    "photos": [],
-    "badge": "POV Road Trip Video",
+    "image": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/pyramid-exterior.webp",
+    "photos": [
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/pyramid-exterior.webp",
+        "alt": "Exterior of the 32-story Bass Pro Shops at the Pyramid in Memphis, Tennessee"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/live-alligators.webp",
+        "alt": "Live alligators basking on the rocks and swimming inside the Bass Pro Pyramid habitat"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/giant-aquarium.webp",
+        "alt": "Floor-to-ceiling indoor aquarium packed with giant bass and catfish inside the Memphis Pyramid"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/cypress-swamp-interior.webp",
+        "alt": "Towering indoor Cypress Swamp, lagoons, and lodges inside Bass Pro Shops at the Pyramid"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/swamp-fish-lagoon.webp",
+        "alt": "Massive sturgeon and catfish swimming around cypress knees in the indoor lagoon"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/upper-overlook.webp",
+        "alt": "Upper overlook deck inside the Bass Pro Pyramid"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/balcony-swamp-view.webp",
+        "alt": "View from the upper balcony looking down over the boats and Cypress Swamp"
+      },
+      {
+        "src": "/assets/reviews/bass-pro-shops-pyramid-memphis-road-trip/damein-outside-pyramid.webp",
+        "alt": "Damein Donald outside Bass Pro Shops at the Pyramid on our I-55 road trip"
+      }
+    ],
+    "badge": "5★ Road Trip + 8 Real Photos",
     "featured": true,
     "mustTry": "Free Indoor Cypress Swamp Boardwalk, Monster Catfish Lagoons & Live Alligators",
     "shortDescription": "15 minutes north of Southaven up I-55 — Damein & Mary filmed inside the 32-story Pyramid's jaw-dropping Cypress Swamp packed with giant catfish and live gators.",

@@ -8,7 +8,7 @@ export const guidesData = [
       "100% real-visited restaurants around Jackson, MS: Fondren BBQ at The Pig & Pint, $12.50 Pearl catfish at Moss Creek, Mama Hamil's & Flowood sushi.",
     updatedAt: "2026-11-22",
     tldr:
-      "Every restaurant in our Jackson Metro guide has been visited and paid for out of pocket by Damein Donald (Level 7 Google Maps Local Guide, 2.2M+ photo views) and Mary: start in Fondren at The Pig & Pint (3139 N State St) for fall-apart brisket and green-chile mac & cheese, head across the river to Pearl for Moss Creek Fish House's $12.50 weekday catfish lunch, drive north to Madison for Mama Hamil's (~$20 ribs & soul-food buffet), or hit Ichiban in Flowood for sushi and hibachi.",
+      "Every restaurant in our Jackson Metro guide has been visited and paid for out of pocket by Damein Donald (Level 7 Google Maps Local Guide, 3M+ photo views) and Mary: start in Fondren at The Pig & Pint (3139 N State St) for fall-apart brisket and green-chile mac & cheese, head across the river to Pearl for Moss Creek Fish House's $12.50 weekday catfish lunch, drive north to Madison for Mama Hamil's (~$20 ribs & soul-food buffet), or hit Ichiban in Flowood for sushi and hibachi.",
     intro:
       "Zero paid placements and zero unvisited filler — every single restaurant below was personally visited, photographed, or filmed by Damein & Mary for The Local Guide MS (@TheLocalGuide-MS on YouTube).",
     spotSlugs: [
@@ -102,10 +102,10 @@ export const guidesData = [
     title: "The Local Guide MS: Mississippi Food YouTube & Reviews",
     seoTitle: "Mississippi Food YouTubers | @TheLocalGuide-MS Channel",
     seoDescription:
-      "Meet Damein Donald (2.2M+ Google Maps views) & Mary of @TheLocalGuide-MS — 100% real, self-paid Mississippi restaurant videos, dish photos & honest reviews.",
+      "Meet Damein Donald (3M+ Google Maps views) & Mary of @TheLocalGuide-MS — 100% real, self-paid Mississippi restaurant videos, dish photos & honest reviews.",
     updatedAt: "2026-11-22",
     tldr:
-      "The Local Guide MS (@TheLocalGuide-MS on YouTube · thelocalguidems.com) is an independent Mississippi restaurant and road-trip review platform hosted by Damein Donald (a Level 7 Google Maps Local Guide with 122+ verified reviews and 2.2M+ photo views) and Mary. Every review features places we actually visited and paid for ourselves — pairing POV video walkthroughs and real table photos with honest Likes & Dislikes.",
+      "The Local Guide MS (@TheLocalGuide-MS on YouTube · thelocalguidems.com) is an independent Mississippi restaurant and road-trip review platform hosted by Damein Donald (a Level 7 Google Maps Local Guide with 131+ verified reviews and 3M+ photo views) and Mary. Every review features places we actually visited and paid for ourselves — pairing POV video walkthroughs and real table photos with honest Likes & Dislikes.",
     intro:
       "No fake placeholder directories and no paid restaurant scripts — every spot on The Local Guide MS is a real meal or event we paid for out of our own pocket. Watch our latest @TheLocalGuide-MS episodes below.",
     spotSlugs: [
@@ -119,7 +119,7 @@ export const guidesData = [
     faqs: [
       {
         q: "Who is behind The Local Guide MS and @TheLocalGuide-MS on YouTube?",
-        a: "The Local Guide MS is hosted by Damein Donald — a Level 7 Google Maps Local Guide based in Central Mississippi with over 2.2 million photo views — alongside co-host Mary.",
+        a: "The Local Guide MS is hosted by Damein Donald — a Level 7 Google Maps Local Guide based in Central Mississippi with over 3 million photo views — alongside co-host Mary.",
       },
       {
         q: "Are every restaurant and photo on thelocalguidems.com from real visits?",
